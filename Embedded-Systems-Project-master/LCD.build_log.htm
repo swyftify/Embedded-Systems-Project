@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.22.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Pavel Tarasov, Student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.22
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARM.DLL V5.22
+Dialog DLL:      DARMP.DLL V1.53.0.0
+Target DLL:      UL2ARM.DLL V1.74.10.0
+Dialog DLL:      TARMP.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\pasho\Desktop\Embedded-Systems-Project-master\Embedded-Systems-Project-master\LCD.uvproj
+Project File Date:  11/23/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Internal Flash'
+assembling serialISR.s...
+compiling main.c...
+compiling Retarget.c...
+assembling LPC2400.s...
+compiling serial.c...
+compiling console.c...
+console.c(29): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
+  	xTaskCreate( vConsoleTask, ( signed char * ) "Console", 
+onsoleSTACK_SIZE, 
+ULL, uxPriority, ( 
+TaskHandle * ) 
+ULL );
+console.c: 1 warning, 0 errors
+compiling lcd.c...
+UI.h(30): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd.c(22): warning:  #1295-D: Deprecated declaration drawDefaultUI - give arg types
+  void drawDefaultUI();
+lcd.c(39): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
+  	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", 
+cdSTACK_SIZE, 
+ULL, uxPriority, ( 
+TaskHandle * ) 
+ULL );
+lcd.c(103): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  				strcpy(buttonController.masterButton.text, "MASTER ON");
+lcd.c(108): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+  				strcpy(buttonController.masterButton.text, "MASTER OFF");	
+lcd.c: 5 warnings, 0 errors
+assembling lcdISR.s...
+assembling portASM.s...
+compiling UI.c...
+UI.h(30): warning:  #1-D: last line of file ends without a newline
+  #endif
+UI.c: 1 warning, 0 errors
+compiling heap_3.c...
+compiling port.c...
+compiling queue.c...
+compiling list.c...
+compiling font5x7.c...
+compiling tasks.c...
+compiling lcd_grph.c...
+compiling lcd_hw.c...
+linking...
+Program Size: Code=23332 RO-data=1128 RW-data=100 ZI-data=4199772  
+".\LCD.axf" - 0 Error(s), 7 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
