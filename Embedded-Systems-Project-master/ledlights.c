@@ -1,11 +1,3 @@
-/* 
-	Sample task that initialises the EA QVGA LCD display
-	with touch screen controller and processes touch screen
-	interrupt events.
-
-	Jonathan Dukes (jdukes@scss.tcd.ie)
-*/
-
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
@@ -22,16 +14,11 @@
 #define I2C_STA     0x00000020
 #define I2C_I2EN    0x00000040
 
+#define lightsSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
+	
+static void vLightsTask( void *pvParameters );
 
-/* Maximum task stack size */
-#define sensorsSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
-
-/* The LCD task. */
-static void vSensorsTask( void *pvParameters );
-
-
-
-void vStartSensors( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
+void vStartLights( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 {
 	static xQueueHandle xCmdQ;
 	/* Enable and configure I2C0 */
@@ -50,18 +37,18 @@ void vStartSensors( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	
 	I20CONSET =  I2C_I2EN;
 	
+	//------------------------------------------------------------------------------------------------
+	
   xCmdQ = xQueue;
 
 	/* Spawn the console task . */
-	xTaskCreate( vSensorsTask, ( signed char * ) "Sensors", sensorsSTACK_SIZE, &xCmdQ, uxPriority, ( xTaskHandle * ) NULL );
+	xTaskCreate( vLightsTask, ( signed char * ) "Lights", lightsSTACK_SIZE, &xCmdQ, uxPriority, ( xTaskHandle * ) NULL );
 	
 
-	printf("Sensor task started ...\r\n");
+	printf("Lights task started ...\r\n");
 }
 
-
-/* Get I2C button status */
-unsigned char getButtons()
+void getleds(unsigned int mask)
 {
 	unsigned char ledData;
 
@@ -74,39 +61,28 @@ unsigned char getButtons()
 	/* Wait for START to be sent */
 	while (!(I20CONSET & I2C_SI));
 
-	/* Request send PCA9532 ADDRESS and R/W bit and clear SI */		
+	/* Request send PCA9532 ADDRESS and Read bit and clear SI */		
 	I20DAT    =  0xC0;
 	I20CONCLR =  I2C_SI | I2C_STA;
 
 	/* Wait for ADDRESS and R/W to be sent */
 	while (!(I20CONSET & I2C_SI));
 
-	/* Send control word to read PCA9532 INPUT0 register */
-	I20DAT = 0x00;
+	/* Send control word to read PCA9532 LS2 register */
+	I20DAT = 0x8;
 	I20CONCLR =  I2C_SI;
 
 	/* Wait for DATA with control word to be sent */
 	while (!(I20CONSET & I2C_SI));
 
-	/* Request send repeated START */
-	I20CONSET =  I2C_STA;
-	I20CONCLR =  I2C_SI;
-
-	/* Wait for START to be sent */
-	while (!(I20CONSET & I2C_SI));
-
-	/* Request send PCA9532 ADDRESS and R/W bit and clear SI */		
-	I20DAT    =  0xC1;
+	/* Request send LED on data */		
+	I20DAT    =  mask;
 	I20CONCLR =  I2C_SI | I2C_STA;
 
-	/* Wait for ADDRESS and R/W to be sent */
+	/* Wait for data to be sent */
 	while (!(I20CONSET & I2C_SI));
 
 	I20CONCLR = I2C_SI;
-
-	/* Wait for DATA to be received */
-	while (!(I20CONSET & I2C_SI));
-
 	ledData = I20DAT;
 
 	/* Request send NAQ and STOP */
@@ -116,29 +92,29 @@ unsigned char getButtons()
 	/* Wait for STOP to be sent */
 	while (I20CONSET & I2C_STO);
 
-	return ledData ^ 0xf;
+	
 }
 
-
-static portTASK_FUNCTION( vSensorsTask, pvParameters )
+static portTASK_FUNCTION( vLightsTask, pvParameters )
 {
 	portTickType xLastWakeTime;
 	unsigned char buttonState;
 	unsigned char lastButtonState;
 	unsigned char changedState;
-	unsigned int i;
-	unsigned char mask;
+	int i;
+	unsigned char defaultMask;
 	xQueueHandle xCmdQ;
   Command cmd;
 	
 	/* Just to stop compiler warnings. */
 	( void ) pvParameters;
 	
-
+	xCmdQ = * ( ( xQueueHandle * ) pvParameters );
+	
 	/* pvParameters is actually a pointer to an xQueueHandle. Cast it and then
 		 dereference it to save it for later use. */
 
-	printf("Starting sensor poll ...\r\n");
+	printf("Starting lighting poll ...\r\n");
 
 	/* initialise lastState with all buttons off */
 	lastButtonState = 0;
@@ -146,36 +122,53 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
 	/* initial xLastWakeTime for accurate polling interval */
 	xLastWakeTime = xTaskGetTickCount();
 					 
-	/* Infinite loop blocks waiting for a touch screen interrupt event from
-	 * the queue. */
 	while( 1 )
 	{
-		/* Read buttons */
-		buttonState = getButtons();
+			defaultMask = 0x00;
+			xQueueReceive(xCmdQ, &cmd, portMAX_DELAY);
+			printf("Master switch %d\r\n", cmd.masterSwitch);
+			
+			printf("Switch 0 is %d\r\n", cmd.lightVectorArray[0]);
+			printf("Switch 1 is %d\r\n", cmd.lightVectorArray[1]);
+			printf("Switch 2 is %d\r\n", cmd.lightVectorArray[2]);
+			printf("Switch 3 is %d\r\n", cmd.lightVectorArray[3]);
 		
-		changedState = buttonState ^ lastButtonState;
-		
-		if (buttonState != lastButtonState)
-		{
-		    /* iterate over each of the 4 LS bits looking for changes in state */
-			for (i = 0; i <= 3; i = i++)
-            {
-                mask = 1 << i;
-                
-                if (changedState & mask)
-                {
-                   // printf("Button %u is %s\r\n", i, (buttonState & mask) ? "on" : "off");
-                }
-		    }
-		    
-			/* remember new state */
-			lastButtonState = buttonState;
-		}
-        
-        /* delay before next poll */
+			// Delay untill lights turn on
+			if(cmd.masterSwitch == 1){
+				defaultMask |= 0x55; 
+			}
+			if(cmd.masterSwitch == 0){
+				defaultMask = 0x00;
+			}
+			
+			for(i = 0;i<4;i++){
+				if(cmd.lightVectorArray[i] == 1){
+						switch(i){
+							case 0:
+								defaultMask |= 0x1;
+								break;
+							case 1:
+								defaultMask |= 0x4;	
+								break;
+							case 2:
+								defaultMask |= 0x10;	
+								break;
+							case 3:
+								defaultMask |= 0x40;	
+								break;	
+							default:
+							break;
+						}
+				}
+				
+			}
+			i = 0;
+			
+			
+			vTaskDelayUntil( &xLastWakeTime, 20);
+			getleds(defaultMask);
     	vTaskDelayUntil( &xLastWakeTime, 20);
 		
-		//	xQueueSendToBack(xCmdQ, &cmd, portMAX_DELAY);
 			
 	}
 }

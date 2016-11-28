@@ -11,6 +11,9 @@
 
 #include "queue.h"
 #include "task.h"
+#include "commands.h"
+
+#define EVQ_MAX_EVENTS 10
 
 extern void vLCD_ISREntry( void );
 
@@ -29,13 +32,16 @@ int main (void)
 	/* Setup the hardware for use with the Keil demo board. */
 	prvSetupHardware();
 	
+	xCmdQ = xQueueCreate(EVQ_MAX_EVENTS, sizeof(Command));
 	
     /* Start the console task */
 	vStartConsole(1, 19200);
 
 	/* Start the lcd task */
-	vStartLcd(1);
-	vStartSensors(2);
+	vStartLcd(1, xCmdQ);
+	
+	vStartSensors(2, xCmdQ);
+	vStartLights(3, xCmdQ);
 	/* Start the FreeRTOS Scheduler ... after this we're pre-emptive multitasking ...
 
 	NOTE : Tasks run in system mode and the scheduler runs in Supervisor mode.

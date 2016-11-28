@@ -16,6 +16,10 @@
 #include <string.h>
 #include "UI.h"
 
+#include "task.h"
+#include "queue.h"
+#include "commands.h"
+
 /* Maximum task stack size */
 #define lcdSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
 	
@@ -31,12 +35,17 @@ static void vLcdTask( void *pvParameters );
 /* Semaphore for ISR/task synchronisation */
 xSemaphoreHandle xLcdSemphr;
 
-void vStartLcd( unsigned portBASE_TYPE uxPriority )
+xQueueHandle localQueue;
+
+void vStartLcd( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 {
+	static xQueueHandle xCmdQ;
+	
 	vSemaphoreCreateBinary(xLcdSemphr);
 
+	localQueue = xQueue;
 	/* Spawn the console task. */
-	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", lcdSTACK_SIZE, NULL, uxPriority, ( xTaskHandle * ) NULL );
+	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", lcdSTACK_SIZE, &localQueue, uxPriority, ( xTaskHandle * ) NULL );
 }
 
 
@@ -47,6 +56,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	unsigned int yPos;
 	int i = 0;
 	int j = 0;
+	Command cmd;
 	
 	ButtonController buttonController; 
 
@@ -101,11 +111,13 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 				buttonController.masterButton.buttonColor = GREEN;
 				buttonController.masterButton.backgroundFontColor = GREEN;
 				strcpy(buttonController.masterButton.text, "MASTER ON");
+				cmd.masterSwitch = 1;
 			}else{
 				buttonController.masterButton.buttonOn = 0;
 				buttonController.masterButton.buttonColor = RED;
 				buttonController.masterButton.backgroundFontColor = RED;
 				strcpy(buttonController.masterButton.text, "MASTER OFF");	
+				cmd.masterSwitch = 0;
 			}
 		}
 		
@@ -117,10 +129,12 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 					buttonController.dimmers[i].buttonColor = GREEN;
 					buttonController.dimmers[i].backgroundFontColor = GREEN;
 					buttonController.dimmers[i].buttonOn = 1;
+					cmd.lightVectorArray[i] = 1;
 				}else{
 					buttonController.dimmers[i].buttonColor = RED;
 					buttonController.dimmers[i].backgroundFontColor = RED;
 					buttonController.dimmers[i].buttonOn = 0;
+					cmd.lightVectorArray[i] = 0;
 				}
 			}
 		}
@@ -145,6 +159,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		
 					
 		setButtonController(buttonController);
+		xQueueSendToBack(localQueue, &cmd, 0);
 		
 		while (pressure > 0)
 		{
@@ -160,6 +175,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		
 		lcd_fillScreen(BLACK);
 		drawDefaultInterface();
+		
 		
 	}
 }

@@ -15,6 +15,7 @@
 .\main.o: console.h
 .\main.o: serial.h
 .\main.o: lcd.h
+.\main.o: ..\FreeRTOS\Source\include\queue.h
 .\main.o: .\LCD\lcd_hw.h
 .\main.o: .\LCD\lcd_grph.h
-.\main.o: ..\FreeRTOS\Source\include\queue.h
+.\main.o: commands.h

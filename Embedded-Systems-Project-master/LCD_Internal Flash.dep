@@ -1,6 +1,6 @@
 Dependencies for Project 'LCD', Target 'Internal Flash': (DO NOT MODIFY !)
 F (.\LPC2400.s)(0x5832A51E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 522"--list .\lpc2400.lst --xref -o .\lpc2400.o --depend .\lpc2400.d)
-F (.\main.c)(0x583C12CD)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\main.c)(0x583C5460)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (..\FreeRTOS\Source\include\FreeRTOS.h)(0x573F4828)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F67738)
@@ -16,10 +16,11 @@ I (..\FreeRTOS\Source\include\task.h)(0x573F4828)
 I (..\FreeRTOS\Source\include\list.h)(0x573F4828)
 I (console.h)(0x5832A51E)
 I (serial.h)(0x5832A51E)
-I (lcd.h)(0x5832A51E)
+I (lcd.h)(0x583C4FC0)
+I (..\FreeRTOS\Source\include\queue.h)(0x573F4828)
 I (.\LCD\lcd_hw.h)(0x5832A51E)
 I (.\LCD\lcd_grph.h)(0x5832A51E)
-I (..\FreeRTOS\Source\include\queue.h)(0x573F4828)
+I (commands.h)(0x583C322D)
 F (.\console.c)(0x5832A51E)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\console.o --omf_browse .\console.crf --depend .\console.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
@@ -73,7 +74,7 @@ F (.\console.h)(0x5832A51E)()
 F (.\serial.h)(0x5832A51E)()
 F (.\serialISR.s)(0x5832A51E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 522"--list .\serialisr.lst --xref -o .\serialisr.o --depend .\serialisr.d)
 I (..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro.inc)(0x5807BD70)
-F (.\lcd.c)(0x583C0B96)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
+F (.\lcd.c)(0x583C5B9E)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
 I (..\FreeRTOS\Source\include\FreeRTOS.h)(0x573F4828)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F67738)
@@ -88,12 +89,13 @@ I (..\FreeRTOS\Source\include\task.h)(0x573F4828)
 I (..\FreeRTOS\Source\include\list.h)(0x573F4828)
 I (..\FreeRTOS\Source\include\semphr.h)(0x573F4828)
 I (..\FreeRTOS\Source\include\queue.h)(0x573F4828)
-I (lcd.h)(0x5832A51E)
+I (lcd.h)(0x583C4FC0)
 I (.\LCD\lcd_hw.h)(0x5832A51E)
 I (.\LCD\lcd_grph.h)(0x5832A51E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F67738)
 I (UI.h)(0x583C0BCA)
+I (commands.h)(0x583C322D)
 F (.\lcdISR.s)(0x5832A51E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 522"--list .\lcdisr.lst --xref -o .\lcdisr.o --depend .\lcdisr.d)
 I (..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro.inc)(0x5807BD70)
 F (.\UI.c)(0x583C0BDF)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\ui.o --omf_browse .\ui.crf --depend .\ui.d)
@@ -101,7 +103,7 @@ I (.\LCD\lcd_grph.h)(0x5832A51E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (UI.h)(0x583C0BCA)
-F (.\sensors.c)(0x583C114F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\sensors.o --omf_browse .\sensors.crf --depend .\sensors.d)
+F (.\sensors.c)(0x583C6358)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\sensors.o --omf_browse .\sensors.crf --depend .\sensors.d)
 I (..\FreeRTOS\Source\include\FreeRTOS.h)(0x573F4828)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F67738)
@@ -117,8 +119,29 @@ I (..\FreeRTOS\Source\include\list.h)(0x573F4828)
 I (..\FreeRTOS\Source\include\queue.h)(0x573F4828)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F67738)
-I (sensors.h)(0x4CF78A88)
-F (.\sensors.h)(0x4CF78A88)()
+I (sensors.h)(0x583C15C9)
+I (commands.h)(0x583C322D)
+F (.\sensors.h)(0x583C15C9)()
+F (.\commands.h)(0x583C322D)()
+F (.\ledlights.c)(0x583C7148)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\ledlights.o --omf_browse .\ledlights.crf --depend .\ledlights.d)
+I (..\FreeRTOS\Source\include\FreeRTOS.h)(0x573F4828)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F67738)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F67738)
+I (.\FreeRTOSConfig.h)(0x5832A51E)
+I (C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h)(0x559D3D78)
+I (..\FreeRTOS\Source\include\projdefs.h)(0x573F4828)
+I (..\FreeRTOS\Source\include\portable.h)(0x573F4828)
+I (..\FreeRTOS\Source\include\deprecated_definitions.h)(0x573F4828)
+I (..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro.h)(0x5807BD48)
+I (..\FreeRTOS\Source\include\mpu_wrappers.h)(0x573F4828)
+I (..\FreeRTOS\Source\include\task.h)(0x573F4828)
+I (..\FreeRTOS\Source\include\list.h)(0x573F4828)
+I (..\FreeRTOS\Source\include\queue.h)(0x573F4828)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F67738)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F67738)
+I (sensors.h)(0x583C15C9)
+I (commands.h)(0x583C322D)
+F (.\ledlights.h)(0x583C3AA0)()
 F (..\FreeRTOS\Source\list.c)(0x573F4828)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I . -I ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -I ..\FreeRTOS\Source\include -I .\LCD-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\Philips-D__UVISION_VERSION="522" -DARM7_LPC2468_TCD-o .\list.o --omf_browse .\list.crf --depend .\list.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F67738)
 I (..\FreeRTOS\Source\include\FreeRTOS.h)(0x573F4828)
