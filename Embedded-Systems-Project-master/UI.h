@@ -17,8 +17,10 @@ typedef struct Button{
 
 typedef struct ButtonController{
 	Button masterButton;
-	Button dimmers[4];
-	Button presets[2];
+	Button * dimmers;
+	Button * presets;
+	Button * adjusters;
+	Button * adjusterReading;
 }ButtonController;
 		
 void drawDefaultInterface(void);

@@ -9,6 +9,9 @@
 #include "lcd_hw.h"
 #include "lcd_grph.h"
 
+#include "queue.h"
+#include "task.h"
+
 extern void vLCD_ISREntry( void );
 
 /*
@@ -22,15 +25,17 @@ static void prvSetupHardware( void );
 
 int main (void)
 {
+	 xQueueHandle xCmdQ;
 	/* Setup the hardware for use with the Keil demo board. */
 	prvSetupHardware();
+	
 	
     /* Start the console task */
 	vStartConsole(1, 19200);
 
 	/* Start the lcd task */
 	vStartLcd(1);
-
+	vStartSensors(2);
 	/* Start the FreeRTOS Scheduler ... after this we're pre-emptive multitasking ...
 
 	NOTE : Tasks run in system mode and the scheduler runs in Supervisor mode.

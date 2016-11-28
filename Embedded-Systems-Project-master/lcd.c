@@ -65,7 +65,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 
 	buttonController = initialiseButtons();
 
-	lcd_fillScreen(MAROON);
+	lcd_fillScreen(BLACK);
 
 
 	/* Infinite loop blocks waiting for a touch screen interrupt event from
@@ -158,7 +158,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 
 		/* +++ This point in the code can be interpreted as a screen button release event +++ */
 		
-		lcd_fillScreen(MAROON);
+		lcd_fillScreen(BLACK);
 		drawDefaultInterface();
 		
 	}

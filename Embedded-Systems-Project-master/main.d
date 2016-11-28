@@ -17,3 +17,4 @@
 .\main.o: lcd.h
 .\main.o: .\LCD\lcd_hw.h
 .\main.o: .\LCD\lcd_grph.h
+.\main.o: ..\FreeRTOS\Source\include\queue.h

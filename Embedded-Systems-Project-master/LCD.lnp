@@ -8,6 +8,7 @@
 ".\lcd.o"
 ".\lcdisr.o"
 ".\ui.o"
+".\sensors.o"
 ".\list.o"
 ".\queue.o"
 ".\tasks.o"
