@@ -15,4 +15,5 @@
 .\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\sensors.o: sensors.h
+.\sensors.o: ..\FreeRTOS\Source\include\semphr.h
 .\sensors.o: commands.h

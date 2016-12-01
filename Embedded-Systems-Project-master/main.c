@@ -40,7 +40,7 @@ int main (void)
 	/* Start the lcd task */
 	vStartLcd(1, xCmdQ);
 	
-	vStartSensors(2, xCmdQ);
+	vStartSensors(1, xCmdQ);
 	vStartLights(3, xCmdQ);
 	/* Start the FreeRTOS Scheduler ... after this we're pre-emptive multitasking ...
 

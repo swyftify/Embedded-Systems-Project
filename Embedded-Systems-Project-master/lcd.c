@@ -56,6 +56,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	unsigned int yPos;
 	int i = 0;
 	int j = 0;
+
 	Command cmd;
 	
 	ButtonController buttonController; 
@@ -104,6 +105,8 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		/* Keep polling until pressure == 0 */
 		getTouch(&xPos, &yPos, &pressure);
 		
+		//changedState = currentState ^ lastState;
+		
 		if((xPos >= buttonController.masterButton.xpos && xPos <= buttonController.masterButton.xpos+buttonController.masterButton.length) 
 				&& (yPos >= buttonController.masterButton.ypos && yPos <= buttonController.masterButton.ypos+buttonController.masterButton.length)){
 			if(buttonController.masterButton.buttonOn == 0){
@@ -112,12 +115,14 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 				buttonController.masterButton.backgroundFontColor = GREEN;
 				strcpy(buttonController.masterButton.text, "MASTER ON");
 				cmd.masterSwitch = 1;
+				
 			}else{
 				buttonController.masterButton.buttonOn = 0;
 				buttonController.masterButton.buttonColor = RED;
 				buttonController.masterButton.backgroundFontColor = RED;
 				strcpy(buttonController.masterButton.text, "MASTER OFF");	
 				cmd.masterSwitch = 0;
+				
 			}
 		}
 		
@@ -130,11 +135,13 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 					buttonController.dimmers[i].backgroundFontColor = GREEN;
 					buttonController.dimmers[i].buttonOn = 1;
 					cmd.lightVectorArray[i] = 1;
+					
 				}else{
 					buttonController.dimmers[i].buttonColor = RED;
 					buttonController.dimmers[i].backgroundFontColor = RED;
 					buttonController.dimmers[i].buttonOn = 0;
 					cmd.lightVectorArray[i] = 0;
+					
 				}
 			}
 		}
@@ -147,10 +154,12 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 					buttonController.presets[j].buttonColor = YELLOW;
 					buttonController.presets[j].backgroundFontColor = YELLOW;
 					buttonController.presets[j].buttonOn = 1;
+					
 				}else{
 					buttonController.presets[j].buttonColor = CYAN;
 					buttonController.presets[j].backgroundFontColor = CYAN;
 					buttonController.presets[j].buttonOn = 0;
+					
 				}
 			}
 		}
@@ -159,7 +168,8 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		
 					
 		setButtonController(buttonController);
-		xQueueSendToBack(localQueue, &cmd, 0);
+		//lastState = currentState;
+		
 		
 		while (pressure > 0)
 		{
@@ -176,6 +186,10 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		lcd_fillScreen(BLACK);
 		drawDefaultInterface();
 		
+
+		xQueueSendToBack(localQueue, &cmd, 0);
+		printf("Command %u", cmd.masterSwitch);
+		printf("SENT FROM LCD\r\n");
 		
 	}
 }

@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sensors.h"
+#include "semphr.h"
 
 #include "commands.h"
 
@@ -29,10 +30,11 @@
 /* The LCD task. */
 static void vSensorsTask( void *pvParameters );
 
-
+xQueueHandle localQueueMain;
 
 void vStartSensors( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
-{
+{	
+	
 	static xQueueHandle xCmdQ;
 	/* Enable and configure I2C0 */
 	PCONP    |=  (1 << 7);                /* Enable power for I2C0              */
@@ -50,10 +52,10 @@ void vStartSensors( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	
 	I20CONSET =  I2C_I2EN;
 	
-  xCmdQ = xQueue;
-
+  localQueueMain = xQueue;
+	
 	/* Spawn the console task . */
-	xTaskCreate( vSensorsTask, ( signed char * ) "Sensors", sensorsSTACK_SIZE, &xCmdQ, uxPriority, ( xTaskHandle * ) NULL );
+	xTaskCreate( vSensorsTask, ( signed char * ) "Sensors", sensorsSTACK_SIZE, &localQueueMain, uxPriority, ( xTaskHandle * ) NULL );
 	
 
 	printf("Sensor task started ...\r\n");
@@ -127,8 +129,8 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
 	unsigned char lastButtonState;
 	unsigned char changedState;
 	unsigned int i;
+	unsigned int statusChange = 0;
 	unsigned char mask;
-	xQueueHandle xCmdQ;
   Command cmd;
 	
 	/* Just to stop compiler warnings. */
@@ -164,7 +166,9 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
                 
                 if (changedState & mask)
                 {
-                   // printf("Button %u is %s\r\n", i, (buttonState & mask) ? "on" : "off");
+									cmd.masterSwitch = 1;
+									vTaskDelayUntil( &xLastWakeTime, 5);
+									xQueueSendToBack(localQueueMain, &cmd, portMAX_DELAY);
                 }
 		    }
 		    
@@ -172,10 +176,11 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
 			lastButtonState = buttonState;
 		}
         
-        /* delay before next poll */
-    	vTaskDelayUntil( &xLastWakeTime, 20);
-		
-		//	xQueueSendToBack(xCmdQ, &cmd, portMAX_DELAY);
+		vTaskDelayUntil( &xLastWakeTime, 5);
+	
+		//xQueueSendToBack(localQueueMain, &cmd, portMAX_DELAY);
+		//printf("Command from sensor %u \r\n", cmd.masterSwitch);
+		//printf("SENT FROM SENSORS\r\n");
 			
 	}
 }

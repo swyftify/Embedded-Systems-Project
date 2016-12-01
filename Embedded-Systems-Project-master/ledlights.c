@@ -8,9 +8,9 @@
 
 #include "commands.h"
 
-#define I2C_AA      0x00000004
-#define I2C_SI      0x00000008
-#define I2C_STO     0x00000010
+#define I2C_AA      0x00000004 		// Frequence Prescaler 1?
+#define I2C_SI      0x00000008		// LS2 ?
+#define I2C_STO     0x00000010		
 #define I2C_STA     0x00000020
 #define I2C_I2EN    0x00000040
 
@@ -34,6 +34,7 @@ void vStartLights( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	/* Setup I2C clock speed                                                    */
 	I20SCLL   =  0x80;
 	I20SCLH   =  0x80;
+	
 	
 	I20CONSET =  I2C_I2EN;
 	
@@ -126,12 +127,12 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 	{
 			defaultMask = 0x00;
 			xQueueReceive(xCmdQ, &cmd, portMAX_DELAY);
-			printf("Master switch %d\r\n", cmd.masterSwitch);
+		//	printf("Master switch %d\r\n", cmd.masterSwitch);
 			
-			printf("Switch 0 is %d\r\n", cmd.lightVectorArray[0]);
-			printf("Switch 1 is %d\r\n", cmd.lightVectorArray[1]);
-			printf("Switch 2 is %d\r\n", cmd.lightVectorArray[2]);
-			printf("Switch 3 is %d\r\n", cmd.lightVectorArray[3]);
+	//		printf("Switch 0 is %d\r\n", cmd.lightVectorArray[0]);
+		//	printf("Switch 1 is %d\r\n", cmd.lightVectorArray[1]);
+		//	printf("Switch 2 is %d\r\n", cmd.lightVectorArray[2]);
+		//	printf("Switch 3 is %d\r\n", cmd.lightVectorArray[3]);
 		
 			// Delay untill lights turn on
 			if(cmd.masterSwitch == 1){
@@ -154,7 +155,7 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 								defaultMask |= 0x10;	
 								break;
 							case 3:
-								defaultMask |= 0x40;	
+								defaultMask |= 0x80;	// if 0x80 then blink with PWM0 freq. else 0x40 to be LED ON
 								break;	
 							default:
 							break;
@@ -163,7 +164,6 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 				
 			}
 			i = 0;
-			
 			
 			vTaskDelayUntil( &xLastWakeTime, 20);
 			getleds(defaultMask);
