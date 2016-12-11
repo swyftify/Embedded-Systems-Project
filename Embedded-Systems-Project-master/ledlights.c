@@ -1,12 +1,13 @@
 #include "FreeRTOS.h"
+#include "timers.h"
 #include "task.h"
 #include "queue.h"
 #include "lpc24xx.h"
 #include <stdio.h>
 #include <string.h>
 #include "sensors.h"
-
 #include "commands.h"
+#include "lcd.h"
 
 #define I2C_AA      0x00000004 		// Frequence Prescaler 1?
 #define I2C_SI      0x00000008		// LS2 ?
@@ -17,6 +18,11 @@
 #define lightsSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
 	
 static void vLightsTask( void *pvParameters );
+void vTimerCallback( TimerHandle_t xTimer );
+void brightness();
+
+// Define the timer
+TimerHandle_t lightTimer;
 
 void vStartLights( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 {
@@ -35,7 +41,6 @@ void vStartLights( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	I20SCLL   =  0x80;
 	I20SCLH   =  0x80;
 	
-	
 	I20CONSET =  I2C_I2EN;
 	
 	//------------------------------------------------------------------------------------------------
@@ -45,14 +50,13 @@ void vStartLights( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	/* Spawn the console task . */
 	xTaskCreate( vLightsTask, ( signed char * ) "Lights", lightsSTACK_SIZE, &xCmdQ, uxPriority, ( xTaskHandle * ) NULL );
 	
+	lightTimer = xTimerCreate("Main Light Timer" ,4000, pdFALSE, ( void * ) 0, vTimerCallback );
 
-	printf("Lights task started ...\r\n");
+	printf("Lights task started with timer ...\r\n");
 }
 
 void getleds(unsigned int mask)
 {
-	unsigned char ledData;
-
 	/* Initialise */
 	I20CONCLR =  I2C_AA | I2C_SI | I2C_STA | I2C_STO;
 	
@@ -84,7 +88,49 @@ void getleds(unsigned int mask)
 	while (!(I20CONSET & I2C_SI));
 
 	I20CONCLR = I2C_SI;
-	ledData = I20DAT;
+	
+	/* Request send NAQ and STOP */
+	I20CONSET =  I2C_STO;
+	I20CONCLR =  I2C_SI | I2C_AA;
+
+	/* Wait for STOP to be sent */
+	while (I20CONSET & I2C_STO);
+}
+
+void brightness(unsigned int registerVal, unsigned int val)
+{
+
+	/* Initialise */
+	I20CONCLR =  I2C_AA | I2C_SI | I2C_STA | I2C_STO;
+	
+	/* Request send START */
+	I20CONSET =  I2C_STA;
+
+	/* Wait for START to be sent */
+	while (!(I20CONSET & I2C_SI));
+
+	/* Request send PCA9532 ADDRESS and Read bit and clear SI */		
+	I20DAT    =  0xC0;
+	I20CONCLR =  I2C_SI | I2C_STA;
+
+	/* Wait for ADDRESS and R/W to be sent */
+	while (!(I20CONSET & I2C_SI));
+
+	/* Send control word to read PCA9532 LS2 register */
+	I20DAT = registerVal;
+	I20CONCLR =  I2C_SI;
+
+	/* Wait for DATA with control word to be sent */
+	while (!(I20CONSET & I2C_SI));
+
+	/* Request send LED on data */		
+	I20DAT    =  val;
+	I20CONCLR =  I2C_SI | I2C_STA;
+
+	/* Wait for data to be sent */
+	while (!(I20CONSET & I2C_SI));
+
+	I20CONCLR = I2C_SI;
 
 	/* Request send NAQ and STOP */
 	I20CONSET =  I2C_STO;
@@ -92,9 +138,15 @@ void getleds(unsigned int mask)
 
 	/* Wait for STOP to be sent */
 	while (I20CONSET & I2C_STO);
-
-	
 }
+
+void vTimerCallback( TimerHandle_t xTimer ) {
+	//Stop the timer when it expires
+	xTimerStop( xTimer, 0 );
+	getleds(0x00);
+	printf("Timer Expired");
+}
+
 
 static portTASK_FUNCTION( vLightsTask, pvParameters )
 {
@@ -104,6 +156,7 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 	unsigned char changedState;
 	int i;
 	unsigned char defaultMask;
+	unsigned int brightnessValue;
 	xQueueHandle xCmdQ;
   Command cmd;
 	
@@ -122,46 +175,49 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 
 	/* initial xLastWakeTime for accurate polling interval */
 	xLastWakeTime = xTaskGetTickCount();
+	
+	brightness(0x03,0x05);	// PWM0
+	brightness(0x05,0x20);		// PWM1
 					 
 	while( 1 )
 	{
 			defaultMask = 0x00;
 			xQueueReceive(xCmdQ, &cmd, portMAX_DELAY);
-		//	printf("Master switch %d\r\n", cmd.masterSwitch);
-			
-	//		printf("Switch 0 is %d\r\n", cmd.lightVectorArray[0]);
-		//	printf("Switch 1 is %d\r\n", cmd.lightVectorArray[1]);
-		//	printf("Switch 2 is %d\r\n", cmd.lightVectorArray[2]);
-		//	printf("Switch 3 is %d\r\n", cmd.lightVectorArray[3]);
 		
-			// Delay untill lights turn on
 			if(cmd.masterSwitch == 1){
-				defaultMask |= 0x55; 
+				xTimerStart(lightTimer, 0);
+				defaultMask = 0x55; 
 			}
 			if(cmd.masterSwitch == 0){
 				defaultMask = 0x00;
 			}
 			
 			for(i = 0;i<4;i++){
-				if(cmd.lightVectorArray[i] == 1){
-						switch(i){
-							case 0:
-								defaultMask |= 0x1;
-								break;
-							case 1:
-								defaultMask |= 0x4;	
-								break;
-							case 2:
-								defaultMask |= 0x10;	
-								break;
-							case 3:
-								defaultMask |= 0x80;	// if 0x80 then blink with PWM0 freq. else 0x40 to be LED ON
-								break;	
-							default:
-							break;
-						}
+				xTimerStart(lightTimer, 0);
+				switch(i){
+					case 0:
+						if(cmd.brightnessLevels[i]==1) defaultMask |= 0x2;
+						if(cmd.brightnessLevels[i]==2) defaultMask |= 0x3;
+						if(cmd.brightnessLevels[i]==3) defaultMask |= 0x1;
+					break;
+					case 1:
+						if(cmd.brightnessLevels[i]==1) defaultMask |= 0x8;
+						if(cmd.brightnessLevels[i]==2) defaultMask |= 0xC;
+						if(cmd.brightnessLevels[i]==3) defaultMask |= 0x4;
+					break;
+					case 2:
+						if(cmd.brightnessLevels[i]==1) defaultMask |= 0x20;
+						if(cmd.brightnessLevels[i]==2) defaultMask |= 0x30;
+						if(cmd.brightnessLevels[i]==3) defaultMask |= 0x10;
+					break;
+					case 3:
+						if(cmd.brightnessLevels[i]==1) defaultMask |= 0x80;
+						if(cmd.brightnessLevels[i]==2) defaultMask |= 0xC0;
+						if(cmd.brightnessLevels[i]==3) defaultMask |= 0x40;
+					break;
+					default:
+						break;
 				}
-				
 			}
 			i = 0;
 			

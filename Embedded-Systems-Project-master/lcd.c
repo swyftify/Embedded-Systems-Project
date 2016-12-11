@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "UI.h"
+#include "sensors.h"
 
 #include "task.h"
 #include "queue.h"
@@ -48,6 +49,22 @@ void vStartLcd( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", lcdSTACK_SIZE, &localQueue, uxPriority, ( xTaskHandle * ) NULL );
 }
 
+static ButtonController buttonController; 
+
+// Increment flag 1 if ++, 0 if --
+Command limiter(Command cmd, int incrementFlag, int lightIndex){
+	if(incrementFlag == 1 && cmd.brightnessLevels[lightIndex] == 3){
+		cmd.brightnessLevels[lightIndex] = 3;
+	}else if(incrementFlag == 0 && cmd.brightnessLevels[lightIndex] == 0){
+		cmd.brightnessLevels[lightIndex] = 0;
+	}else if (incrementFlag == 1){
+		cmd.brightnessLevels[lightIndex]++; 
+	}else if(incrementFlag == 0){
+		cmd.brightnessLevels[lightIndex]--;
+	}
+	return cmd;
+}
+
 
 static portTASK_FUNCTION( vLcdTask, pvParameters )
 {
@@ -56,10 +73,10 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	unsigned int yPos;
 	int i = 0;
 	int j = 0;
+	int total = 0;
 
 	Command cmd;
-	
-	ButtonController buttonController; 
+	Command cmdToInterface;
 
 	portTickType xLastWakeTime;
 
@@ -78,11 +95,18 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 
 	lcd_fillScreen(BLACK);
 
-
+	for(;i<4;i++){
+		cmd.brightnessLevels[i] = 0;
+		}
+	i = 0;
+	
 	/* Infinite loop blocks waiting for a touch screen interrupt event from
 	 * the queue. */
 	for( ;; )
 	{
+		
+		buttonController = getButtonController();
+		printf("lcd controller %u \r\n", buttonController.masterButton.buttonOn);
 		/* Clear TS interrupts (EINT3) */
 		/* Reset and (re-)enable TS interrupts on EINT3 */
 		EXTINT = 8;						/* Reset EINT3 */
@@ -134,14 +158,14 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 					buttonController.dimmers[i].buttonColor = GREEN;
 					buttonController.dimmers[i].backgroundFontColor = GREEN;
 					buttonController.dimmers[i].buttonOn = 1;
-					cmd.lightVectorArray[i] = 1;
-					
+					cmd.brightnessLevels[i] = 3;
+					total++;
 				}else{
 					buttonController.dimmers[i].buttonColor = RED;
 					buttonController.dimmers[i].backgroundFontColor = RED;
 					buttonController.dimmers[i].buttonOn = 0;
-					cmd.lightVectorArray[i] = 0;
-					
+					cmd.brightnessLevels[i] = 0;
+					total--;
 				}
 			}
 		}
@@ -165,6 +189,52 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		}
 		j = 0;
 		
+		for(;i<8;i++){
+			if((xPos >= buttonController.adjusters[i].xpos && xPos <= buttonController.adjusters[i].xpos+buttonController.adjusters[i].length) 
+					&& (yPos >= buttonController.adjusters[i].ypos && yPos <= buttonController.adjusters[i].ypos+buttonController.adjusters[i].length)){
+						switch(i){
+							case 0:
+								cmd = limiter(cmd, 1, 0);
+								break;
+							case 1:
+								cmd = limiter(cmd, 0, 0);
+								break;
+							case 2:
+								cmd = limiter(cmd, 1, 1);
+								break;
+							case 3:
+								cmd = limiter(cmd, 0, 1);
+								break;
+							case 4:
+								cmd = limiter(cmd, 1, 2);
+								break;
+							case 5:
+								cmd = limiter(cmd, 0, 2);
+								break;
+							case 6:
+								cmd = limiter(cmd, 1, 3);
+								break;
+							case 7:
+								cmd = limiter(cmd, 0, 3);
+								break;
+							default:
+								break;
+						}
+			}
+		}
+		i = 0;
+		for(;i< 4;i++){
+			if(cmd.brightnessLevels[i] != 0){
+				buttonController.dimmers[i].buttonColor = GREEN;
+				buttonController.dimmers[i].backgroundFontColor = GREEN;
+				buttonController.dimmers[i].buttonOn = 1;
+			}else{
+				buttonController.dimmers[i].buttonColor = RED;
+				buttonController.dimmers[i].backgroundFontColor = RED;
+				buttonController.dimmers[i].buttonOn = 0;
+			}
+		}
+		i = 0;
 		
 					
 		setButtonController(buttonController);

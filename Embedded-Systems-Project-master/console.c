@@ -7,7 +7,7 @@
 #include "serial.h"
 #include "console.h"
 
-#define consoleSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
+#define consoleSTACK_SIZE			( ( unsigned portBASE_TYPE ) 128 )
 #define consoleBUFFER_LEN			( ( unsigned portBASE_TYPE ) 256 )
 #define consoleMAX_DELAY			( ( portTickType ) 1000 )
 

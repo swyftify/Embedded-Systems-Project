@@ -4,7 +4,7 @@
 typedef struct Command
 {
 		int masterSwitch;
-    int lightVectorArray[4];
+		int brightnessLevels[4]; // from 0-3
 		int presetArray[2];
 } Command;
 

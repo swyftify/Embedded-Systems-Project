@@ -112,6 +112,9 @@ void setButtonController(ButtonController newController){
 	buttonController = newController;
 }
 
+ButtonController getButtonController(){
+	return buttonController;
+}
 
 
 

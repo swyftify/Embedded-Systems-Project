@@ -14,15 +14,18 @@
 #include <string.h>
 #include "sensors.h"
 #include "semphr.h"
-
+#include "lcd.h"
 #include "commands.h"
+#include "UI.h"
+#include "lcd.h"
+#include "lcd_hw.h"
+#include "lcd_grph.h"
 
 #define I2C_AA      0x00000004
 #define I2C_SI      0x00000008
 #define I2C_STO     0x00000010
 #define I2C_STA     0x00000020
 #define I2C_I2EN    0x00000040
-
 
 /* Maximum task stack size */
 #define sensorsSTACK_SIZE			( ( unsigned portBASE_TYPE ) 256 )
@@ -132,6 +135,7 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
 	unsigned int statusChange = 0;
 	unsigned char mask;
   Command cmd;
+	Command cmdToInterface;
 	
 	/* Just to stop compiler warnings. */
 	( void ) pvParameters;
@@ -154,6 +158,7 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
 	{
 		/* Read buttons */
 		buttonState = getButtons();
+
 		
 		changedState = buttonState ^ lastButtonState;
 		
@@ -166,6 +171,7 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
                 
                 if (changedState & mask)
                 {
+									printf("sensors button controller %u", buttonController.masterButton.buttonOn);
 									cmd.masterSwitch = 1;
 									vTaskDelayUntil( &xLastWakeTime, 5);
 									xQueueSendToBack(localQueueMain, &cmd, portMAX_DELAY);

@@ -23,10 +23,14 @@ typedef struct ButtonController{
 	Button * adjusterReading;
 }ButtonController;
 		
+extern ButtonController buttonController; 
+
 void drawDefaultInterface(void);
 
 ButtonController initialiseButtons(void);
 
 void setButtonController(ButtonController newController);
+
+ButtonController getButtonController();
 
 #endif

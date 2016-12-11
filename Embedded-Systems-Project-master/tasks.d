@@ -13,5 +13,5 @@
 .\tasks.o: ..\FreeRTOS\Source\include\mpu_wrappers.h
 .\tasks.o: ..\FreeRTOS\Source\include\task.h
 .\tasks.o: ..\FreeRTOS\Source\include\list.h
-.\tasks.o: ..\FreeRTOS\Source\include\timers.h
+.\tasks.o: .\timers.h
 .\tasks.o: ..\FreeRTOS\Source\include\StackMacros.h

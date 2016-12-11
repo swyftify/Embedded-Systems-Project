@@ -50,8 +50,8 @@
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
-          <DebugInformation>1</DebugInformation>
-          <BrowseInformation>1</BrowseInformation>
+          <DebugInformation>0</DebugInformation>
+          <BrowseInformation>0</BrowseInformation>
           <ListingPath>.\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -231,7 +231,7 @@
             <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
-            <CodeSel>0</CodeSel>
+            <CodeSel>1</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
             <NoZi2>0</NoZi2>
@@ -349,7 +349,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
@@ -478,6 +478,31 @@
               <FileType>1</FileType>
               <FilePath>.\UI.c</FilePath>
             </File>
+            <File>
+              <FileName>sensors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\sensors.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensors.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\sensors.h</FilePath>
+            </File>
+            <File>
+              <FileName>commands.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\commands.h</FilePath>
+            </File>
+            <File>
+              <FileName>ledlights.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ledlights.c</FilePath>
+            </File>
+            <File>
+              <FileName>ledlights.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ledlights.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -527,6 +552,16 @@
               <FileName>FreeRTOSConfig.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\FreeRTOSConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeRTOS\Source\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FreeRTOS\Source\include\timers.h</FilePath>
             </File>
           </Files>
         </Group>

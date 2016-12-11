@@ -1,0 +1,16 @@
+.\timers.o: timers.c
+.\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\timers.o: ..\FreeRTOS\Source\include\FreeRTOS.h
+.\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\timers.o: .\FreeRTOSConfig.h
+.\timers.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
+.\timers.o: ..\FreeRTOS\Source\include\projdefs.h
+.\timers.o: ..\FreeRTOS\Source\include\portable.h
+.\timers.o: ..\FreeRTOS\Source\include\deprecated_definitions.h
+.\timers.o: ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro.h
+.\timers.o: ..\FreeRTOS\Source\include\mpu_wrappers.h
+.\timers.o: ..\FreeRTOS\Source\include\task.h
+.\timers.o: ..\FreeRTOS\Source\include\list.h
+.\timers.o: ..\FreeRTOS\Source\include\queue.h
+.\timers.o: timers.h

@@ -16,10 +16,11 @@
 ".\port.o"
 ".\portasm.o"
 ".\heap_3.o"
+".\timers_1.o"
 ".\font5x7.o"
 ".\lcd_grph.o"
 ".\lcd_hw.o"
---strict --scatter ".\LCD.sct"
+--nodebug --strict --scatter ".\LCD.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\LCD.map" -o .\LCD.axf

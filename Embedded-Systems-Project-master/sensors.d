@@ -16,4 +16,8 @@
 .\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\sensors.o: sensors.h
 .\sensors.o: ..\FreeRTOS\Source\include\semphr.h
+.\sensors.o: lcd.h
 .\sensors.o: commands.h
+.\sensors.o: UI.h
+.\sensors.o: .\LCD\lcd_hw.h
+.\sensors.o: .\LCD\lcd_grph.h

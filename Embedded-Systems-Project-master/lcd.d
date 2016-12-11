@@ -19,4 +19,5 @@
 .\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\lcd.o: UI.h
+.\lcd.o: sensors.h
 .\lcd.o: commands.h
