@@ -1,8 +1,8 @@
 .\main.o: main.c
-.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\main.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
 .\main.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\main.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\main.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\main.o: .\FreeRTOSConfig.h
 .\main.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\main.o: ..\FreeRTOS\Source\include\projdefs.h

@@ -60,7 +60,7 @@ void vStartSensors( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	/* Spawn the console task . */
 	xTaskCreate( vSensorsTask, ( signed char * ) "Sensors", sensorsSTACK_SIZE, &localQueueMain, uxPriority, ( xTaskHandle * ) NULL );
 	
-
+	
 	printf("Sensor task started ...\r\n");
 }
 

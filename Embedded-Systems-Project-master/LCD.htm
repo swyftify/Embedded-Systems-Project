@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\LCD.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\LCD.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Mon Dec 05 14:55:31 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050169: Last Updated: Mon Dec 12 14:42:48 2016
 <BR><P>
 <H3>Maximum Stack Usage =          0 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -15,7 +15,7 @@ Mutually Recursive functions
  <LI><a href="#[e]">PAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e]">PAbt_Handler</a><BR>
  <LI><a href="#[f]">DAbt_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f]">DAbt_Handler</a><BR>
  <LI><a href="#[10]">IRQ_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[10]">IRQ_Handler</a><BR>
- <LI><a href="#[35]">_sys_exit</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[35]">_sys_exit</a><BR>
+ <LI><a href="#[36]">_sys_exit</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[36]">_sys_exit</a><BR>
 </UL>
 <P>
 <H3>
@@ -26,26 +26,27 @@ Function Pointers
  <LI><a href="#[e]">PAbt_Handler</a> from lpc2400.o(RESET) referenced from lpc2400.o(RESET)
  <LI><a href="#[b]">Reset_Handler</a> from lpc2400.o(RESET) referenced from lpc2400.o(RESET)
  <LI><a href="#[c]">Undef_Handler</a> from lpc2400.o(RESET) referenced from lpc2400.o(RESET)
- <LI><a href="#[23]">__main</a> from __main.o(!!!main) referenced from lpc2400.o(RESET)
- <LI><a href="#[20]">_printf_input_char</a> from _printf_char_common.o(.text) referenced from _printf_char_common.o(.text)
- <LI><a href="#[1f]">fputc</a> from retarget.o(.text) referenced from _printf_char_file.o(.text)
+ <LI><a href="#[24]">__main</a> from __main.o(!!!main) referenced from lpc2400.o(RESET)
+ <LI><a href="#[21]">_printf_input_char</a> from _printf_char_common.o(.text) referenced from _printf_char_common.o(.text)
+ <LI><a href="#[20]">fputc</a> from retarget.o(.text) referenced from _printf_char_file.o(.text)
  <LI><a href="#[13]">main</a> from main.o(.text) referenced from __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
- <LI><a href="#[1d]">prvIdleTask</a> from tasks.o(.text) referenced from tasks.o(.text)
- <LI><a href="#[1e]">prvTimerTask</a> from timers_1.o(.text) referenced from timers_1.o(.text)
+ <LI><a href="#[1e]">prvIdleTask</a> from tasks.o(.text) referenced from tasks.o(.text)
+ <LI><a href="#[1f]">prvTimerTask</a> from timers_1.o(.text) referenced from timers_1.o(.text)
  <LI><a href="#[15]">vConsoleTask</a> from console.o(.text) referenced from console.o(.text)
  <LI><a href="#[14]">vLCD_ISREntry</a> from lcdisr.o(.text) referenced from main.o(.text)
- <LI><a href="#[19]">vLCD_ISRHandler</a> from lcd.o(.text) referenced from lcdisr.o(.text)
+ <LI><a href="#[1a]">vLCD_ISRHandler</a> from lcd.o(.text) referenced from lcdisr.o(.text)
  <LI><a href="#[18]">vLcdTask</a> from lcd.o(.text) referenced from lcd.o(.text)
- <LI><a href="#[1b]">vLightsTask</a> from ledlights.o(.text) referenced from ledlights.o(.text)
+ <LI><a href="#[1c]">vLightsTask</a> from ledlights.o(.text) referenced from ledlights.o(.text)
  <LI><a href="#[d]">vPortYieldProcessor</a> from portasm.o(PORT_ASM) referenced from lpc2400.o(RESET)
  <LI><a href="#[11]">vPreemptiveTick</a> from portasm.o(PORT_ASM) referenced from port.o(.text)
  <LI><a href="#[11]">vPreemptiveTick</a> from portasm.o(PORT_ASM) referenced from lpc2400.o(RESET)
- <LI><a href="#[1a]">vSensorsTask</a> from sensors.o(.text) referenced from sensors.o(.text)
- <LI><a href="#[21]">vTaskSwitchContext</a> from tasks.o(.text) referenced from portasm.o(PORT_ASM)
- <LI><a href="#[1c]">vTimerCallback</a> from ledlights.o(.text) referenced from ledlights.o(.text)
+ <LI><a href="#[1b]">vSensorsTask</a> from sensors.o(.text) referenced from sensors.o(.text)
+ <LI><a href="#[22]">vTaskSwitchContext</a> from tasks.o(.text) referenced from portasm.o(PORT_ASM)
+ <LI><a href="#[1d]">vTimerCallback</a> from ledlights.o(.text) referenced from ledlights.o(.text)
+ <LI><a href="#[19]">vTimerCallback1</a> from lcd.o(.text) referenced from lcd.o(.text)
  <LI><a href="#[16]">vUART_ISREntry</a> from serialisr.o(.text) referenced from serial.o(.text)
  <LI><a href="#[17]">vUART_ISRHandler</a> from serial.o(.text) referenced from serialisr.o(.text)
- <LI><a href="#[22]">xTaskIncrementTick</a> from tasks.o(.text) referenced from portasm.o(PORT_ASM)
+ <LI><a href="#[23]">xTaskIncrementTick</a> from tasks.o(.text) referenced from portasm.o(PORT_ASM)
 </UL>
 <P>
 <H3>
@@ -54,1045 +55,1069 @@ Global Symbols
 <P><STRONG><a name="[b]"></a>Reset_Handler</STRONG> (ARM, 0 bytes, Stack size 0 bytes, lpc2400.o(RESET))
 <BR>[Address Reference Count : 1]<UL><LI> lpc2400.o(RESET)
 </UL>
-<P><STRONG><a name="[23]"></a>__main</STRONG> (ARM, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[24]"></a>__main</STRONG> (ARM, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
+<BR><BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[24]"></a>__scatterload</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __scatter.o(!!!scatter))
-<BR><BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[25]"></a>__scatterload</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __scatter.o(!!!scatter))
+<BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[26]"></a>__scatterload_rt2</STRONG> (ARM, 52 bytes, Stack size 0 bytes, __scatter.o(!!!scatter), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<P><STRONG><a name="[27]"></a>__scatterload_rt2</STRONG> (ARM, 52 bytes, Stack size 0 bytes, __scatter.o(!!!scatter), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[27]"></a>__scatterload_copy</STRONG> (ARM, 40 bytes, Stack size 0 bytes, __scatter_copy.o(!!handler_copy), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<P><STRONG><a name="[28]"></a>__scatterload_copy</STRONG> (ARM, 40 bytes, Stack size 0 bytes, __scatter_copy.o(!!handler_copy), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
-</UL>
-
-<P><STRONG><a name="[c2]"></a>_printf_percent</STRONG> (ARM, 0 bytes, Stack size 0 bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf (via Veneer)
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
-<P><STRONG><a name="[28]"></a>_printf_u</STRONG> (ARM, 0 bytes, Stack size 0 bytes, _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A))
-<BR><BR>[Calls]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec (via Veneer)
+<P><STRONG><a name="[c4]"></a>_printf_percent</STRONG> (ARM, 0 bytes, Stack size 0 bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2f]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li (via Veneer)
+<P><STRONG><a name="[29]"></a>_printf_u</STRONG> (ARM, 0 bytes, Stack size 0 bytes, _printf_u.o(.ARM.Collect$$_printf_percent$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2a]"></a>__rt_lib_init_heap_2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libinit2.o(.ARM.Collect$$libinit$$00000005))
-<BR><BR>[Calls]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<P><STRONG><a name="[30]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li (via Veneer)
 </UL>
 
-<P><STRONG><a name="[33]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls (via Veneer)
+<P><STRONG><a name="[2b]"></a>__rt_lib_init_heap_2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libinit2.o(.ARM.Collect$$libinit$$00000005))
+<BR><BR>[Calls]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
-<P><STRONG><a name="[25]"></a>__rt_entry</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<P><STRONG><a name="[34]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls (via Veneer)
 </UL>
 
-<P><STRONG><a name="[2c]"></a>__rt_entry_sh</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[26]"></a>__rt_entry</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
-<P><STRONG><a name="[2e]"></a>__rt_entry_li</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
-<BR><BR>[Calls]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init (via Veneer)
+<P><STRONG><a name="[2d]"></a>__rt_entry_sh</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[30]"></a>__rt_entry_main</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Calls]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit (via BX)
+<P><STRONG><a name="[2f]"></a>__rt_entry_li</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init (via Veneer)
 </UL>
 
-<P><STRONG><a name="[d6]"></a>__rt_exit</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit (via Veneer)
+<P><STRONG><a name="[31]"></a>__rt_entry_main</STRONG> (ARM, 0 bytes, Stack size 0 bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
+<BR><BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit (via BX)
 </UL>
 
-<P><STRONG><a name="[32]"></a>__rt_exit_ls</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
-<BR><BR>[Calls]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown (via Veneer)
+<P><STRONG><a name="[d8]"></a>__rt_exit</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit (via Veneer)
 </UL>
 
-<P><STRONG><a name="[34]"></a>__rt_exit_exit</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit (via Veneer)
+<P><STRONG><a name="[33]"></a>__rt_exit_ls</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
+<BR><BR>[Calls]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown (via Veneer)
 </UL>
 
-<P><STRONG><a name="[d4]"></a>__user_initial_stackheap</STRONG> (ARM, 0 bytes, Stack size 0 bytes, lpc2400.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[35]"></a>__rt_exit_exit</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit (via Veneer)
+</UL>
+
+<P><STRONG><a name="[d6]"></a>__user_initial_stackheap</STRONG> (ARM, 0 bytes, Stack size 0 bytes, lpc2400.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
 <P><STRONG><a name="[13]"></a>main</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
-<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
-<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
-<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
-<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
+<BR><BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
 </UL>
-<P><STRONG><a name="[38]"></a>vStartConsole</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, console.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
+<P><STRONG><a name="[39]"></a>vStartConsole</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, console.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[45]"></a>xConsolePortHandle</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, console.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
-<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<P><STRONG><a name="[46]"></a>xConsolePortHandle</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, console.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[1f]"></a>fputc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, retarget.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
+<P><STRONG><a name="[20]"></a>fputc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, retarget.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
-<P><STRONG><a name="[46]"></a>fgetc</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
+<P><STRONG><a name="[47]"></a>fgetc</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, retarget.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
 </UL>
 
-<P><STRONG><a name="[d0]"></a>ferror</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, retarget.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<P><STRONG><a name="[d2]"></a>ferror</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, retarget.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 
-<P><STRONG><a name="[47]"></a>_ttywrch</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, retarget.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
+<P><STRONG><a name="[48]"></a>_ttywrch</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, retarget.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xConsolePortHandle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
-</UL>
-
-<P><STRONG><a name="[35]"></a>_sys_exit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit (via Veneer)
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
-<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
 </UL>
 
-<P><STRONG><a name="[42]"></a>xSerialPortInitMinimal</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod (via Veneer)
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<P><STRONG><a name="[36]"></a>_sys_exit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
+<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit (via Veneer)
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
-<P><STRONG><a name="[40]"></a>xSerialGetChar</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[43]"></a>xSerialPortInitMinimal</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod (via Veneer)
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
+<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
+</UL>
+
+<P><STRONG><a name="[41]"></a>xSerialGetChar</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+</UL>
+<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
 <LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vConsoleTask
 </UL>
 
-<P><STRONG><a name="[41]"></a>xSerialPutChar</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[42]"></a>xSerialPutChar</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
-<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSerialPutString
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fgetc
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSerialPutString
 <LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vConsoleTask
 </UL>
 
-<P><STRONG><a name="[3f]"></a>vSerialPutString</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<P><STRONG><a name="[40]"></a>vSerialPutString</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, serial.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vConsoleTask
 </UL>
 
 <P><STRONG><a name="[17]"></a>vUART_ISRHandler</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, serial.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<BR><BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> serialisr.o(.text)
 </UL>
 <P><STRONG><a name="[16]"></a>vUART_ISREntry</STRONG> (ARM, 0 bytes, Stack size 0 bytes, serialisr.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> serial.o(.text)
 </UL>
-<P><STRONG><a name="[4f]"></a>limiter</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, lcd.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<P><STRONG><a name="[19]"></a>vTimerCallback1</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> lcd.o(.text)
+</UL>
+<P><STRONG><a name="[51]"></a>loading</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerIsTimerActive
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fontColor
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[39]"></a>vStartLcd</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, lcd.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<P><STRONG><a name="[56]"></a>limiter</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
+</UL>
+
+<P><STRONG><a name="[3a]"></a>vStartLcd</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreate
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[19]"></a>vLCD_ISRHandler</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<P><STRONG><a name="[1a]"></a>vLCD_ISRHandler</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lcdisr.o(.text)
 </UL>
 <P><STRONG><a name="[14]"></a>vLCD_ISREntry</STRONG> (ARM, 0 bytes, Stack size 0 bytes, lcdisr.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
-<P><STRONG><a name="[52]"></a>initialiseButtons</STRONG> (Thumb, 488 bytes, Stack size 0 bytes, ui.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<P><STRONG><a name="[59]"></a>initialiseButtons</STRONG> (Thumb, 488 bytes, Stack size 0 bytes, ui.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[5b]"></a>drawDefaultInterface</STRONG> (Thumb, 478 bytes, Stack size 0 bytes, ui.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fontColor
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
+<P><STRONG><a name="[63]"></a>drawDefaultInterface</STRONG> (Thumb, 484 bytes, Stack size 0 bytes, ui.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fontColor
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[59]"></a>setButtonController</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, ui.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<P><STRONG><a name="[61]"></a>setButtonController</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, ui.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[54]"></a>getButtonController</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, ui.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<P><STRONG><a name="[5c]"></a>getButtonController</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, ui.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[60]"></a>getButtons</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, sensors.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<P><STRONG><a name="[66]"></a>getButtons</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, sensors.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
 </UL>
 
-<P><STRONG><a name="[3a]"></a>vStartSensors</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, sensors.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<P><STRONG><a name="[3b]"></a>vStartSensors</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, sensors.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[62]"></a>getleds</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, ledlights.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<P><STRONG><a name="[67]"></a>getleds</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, ledlights.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
 </UL>
 
-<P><STRONG><a name="[1c]"></a>vTimerCallback</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, ledlights.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getleds
+<P><STRONG><a name="[1d]"></a>vTimerCallback</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, ledlights.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getleds
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ledlights.o(.text)
 </UL>
-<P><STRONG><a name="[63]"></a>brightness</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, ledlights.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<P><STRONG><a name="[68]"></a>brightness</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, ledlights.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
 </UL>
 
-<P><STRONG><a name="[3b]"></a>vStartLights</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, ledlights.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<P><STRONG><a name="[3c]"></a>vStartLights</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, ledlights.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreate
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[66]"></a>vListInitialise</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, list.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<P><STRONG><a name="[6a]"></a>vListInitialise</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, list.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 </UL>
 
-<P><STRONG><a name="[9a]"></a>vListInitialiseItem</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, list.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
+<P><STRONG><a name="[9d]"></a>vListInitialiseItem</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, list.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreate
 </UL>
 
-<P><STRONG><a name="[7d]"></a>vListInsertEnd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, list.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromUnorderedEventList
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnUnorderedEventList
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
-<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
+<P><STRONG><a name="[80]"></a>vListInsertEnd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, list.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromUnorderedEventList
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnUnorderedEventList
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
 </UL>
 
-<P><STRONG><a name="[84]"></a>vListInsert</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, list.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<P><STRONG><a name="[87]"></a>vListInsert</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, list.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
 </UL>
 
-<P><STRONG><a name="[80]"></a>uxListRemove</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, list.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromUnorderedEventList
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
-<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<P><STRONG><a name="[83]"></a>uxListRemove</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, list.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskNotifyGiveFromISR
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromUnorderedEventList
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 </UL>
 
-<P><STRONG><a name="[65]"></a>xQueueGenericReset</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[69]"></a>xQueueGenericReset</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
 
-<P><STRONG><a name="[37]"></a>xQueueGenericCreate</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<P><STRONG><a name="[38]"></a>xQueueGenericCreate</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
-<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
 <LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4c]"></a>xQueueGenericSend</STRONG> (Thumb, 228 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[4d]"></a>xQueueGenericSend</STRONG> (Thumb, 228 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
 </UL>
 
-<P><STRONG><a name="[4e]"></a>xQueueGenericSendFromISR</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
+<P><STRONG><a name="[4f]"></a>xQueueGenericSendFromISR</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 <LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vUART_ISRHandler
 </UL>
 
-<P><STRONG><a name="[5c]"></a>xQueueGiveFromISR</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<P><STRONG><a name="[65]"></a>xQueueGiveFromISR</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLCD_ISRHandler
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLCD_ISRHandler
 </UL>
 
-<P><STRONG><a name="[4b]"></a>xQueueGenericReceive</STRONG> (Thumb, 238 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[4c]"></a>xQueueGenericReceive</STRONG> (Thumb, 238 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
 </UL>
 
-<P><STRONG><a name="[4d]"></a>xQueueReceiveFromISR</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
+<P><STRONG><a name="[4e]"></a>xQueueReceiveFromISR</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vUART_ISRHandler
 </UL>
 
-<P><STRONG><a name="[75]"></a>xQueuePeekFromISR</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
+<P><STRONG><a name="[78]"></a>xQueuePeekFromISR</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 </UL>
 
-<P><STRONG><a name="[76]"></a>uxQueueMessagesWaiting</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[79]"></a>uxQueueMessagesWaiting</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[77]"></a>uxQueueSpacesAvailable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[7a]"></a>uxQueueSpacesAvailable</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[78]"></a>vQueueDelete</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<P><STRONG><a name="[7b]"></a>vQueueDelete</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, queue.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 </UL>
 
-<P><STRONG><a name="[7a]"></a>vQueueWaitForMessageRestricted</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[7d]"></a>vQueueWaitForMessageRestricted</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-</UL>
-
-<P><STRONG><a name="[43]"></a>xTaskCreate</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-</UL>
-<BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
-<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
-<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
-<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
 </UL>
 
-<P><STRONG><a name="[7f]"></a>vTaskDelete</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[44]"></a>xTaskCreate</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+</UL>
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
 </UL>
 
-<P><STRONG><a name="[22]"></a>xTaskIncrementTick</STRONG> (Thumb, 168 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[82]"></a>vTaskDelete</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+
+<P><STRONG><a name="[23]"></a>xTaskIncrementTick</STRONG> (Thumb, 168 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> portasm.o(PORT_ASM)
 </UL>
-<P><STRONG><a name="[71]"></a>xTaskResumeAll</STRONG> (Thumb, 152 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[74]"></a>xTaskResumeAll</STRONG> (Thumb, 152 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-</UL>
-
-<P><STRONG><a name="[6f]"></a>vTaskSuspendAll</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[5a]"></a>vTaskDelayUntil</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<P><STRONG><a name="[72]"></a>vTaskSuspendAll</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+
+<P><STRONG><a name="[62]"></a>vTaskDelayUntil</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[85]"></a>vTaskDelay</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<P><STRONG><a name="[88]"></a>vTaskDelay</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mdelay
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-</UL>
-
-<P><STRONG><a name="[86]"></a>uxTaskPriorityGet</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mdelay
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
 </UL>
 
-<P><STRONG><a name="[87]"></a>vTaskPrioritySet</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[89]"></a>uxTaskPriorityGet</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[21]"></a>vTaskSwitchContext</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLCD_ISRHandler
+<P><STRONG><a name="[8a]"></a>vTaskPrioritySet</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+</UL>
+
+<P><STRONG><a name="[22]"></a>vTaskSwitchContext</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLCD_ISRHandler
 <LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vUART_ISRHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> portasm.o(PORT_ASM)
 </UL>
-<P><STRONG><a name="[88]"></a>vTaskSuspend</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[8b]"></a>vTaskSuspend</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[89]"></a>vTaskResume</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTaskIsTaskSuspended
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[8c]"></a>vTaskResume</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTaskIsTaskSuspended
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[8b]"></a>xTaskResumeFromISR</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTaskIsTaskSuspended
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[8e]"></a>xTaskResumeFromISR</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTaskIsTaskSuspended
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 </UL>
 
-<P><STRONG><a name="[3c]"></a>vTaskStartScheduler</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<P><STRONG><a name="[3d]"></a>vTaskStartScheduler</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[90]"></a>vTaskEndScheduler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEndScheduler
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
+<P><STRONG><a name="[93]"></a>vTaskEndScheduler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEndScheduler
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
 </UL>
 
-<P><STRONG><a name="[55]"></a>xTaskGetTickCount</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[5d]"></a>xTaskGetTickCount</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[72]"></a>vTaskPlaceOnEventList</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
+<P><STRONG><a name="[75]"></a>vTaskPlaceOnEventList</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-</UL>
-
-<P><STRONG><a name="[92]"></a>vTaskPlaceOnUnorderedEventList</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[7b]"></a>vTaskPlaceOnEventListRestricted</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
+<P><STRONG><a name="[95]"></a>vTaskPlaceOnUnorderedEventList</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 </UL>
 
-<P><STRONG><a name="[67]"></a>xTaskRemoveFromEventList</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[7e]"></a>vTaskPlaceOnEventListRestricted</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
 </UL>
 
-<P><STRONG><a name="[93]"></a>xTaskRemoveFromUnorderedEventList</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[6b]"></a>xTaskRemoveFromEventList</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[6e]"></a>vTaskSetTimeOutState</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[96]"></a>xTaskRemoveFromUnorderedEventList</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 </UL>
 
-<P><STRONG><a name="[70]"></a>xTaskCheckForTimeOut</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[71]"></a>vTaskSetTimeOutState</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[6b]"></a>vTaskMissedYield</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<P><STRONG><a name="[73]"></a>xTaskCheckForTimeOut</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSetTimeOutState
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[a1]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+<P><STRONG><a name="[6f]"></a>vTaskMissedYield</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 </UL>
 
-<P><STRONG><a name="[94]"></a>ulTaskNotifyTake</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[a4]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 </UL>
 
-<P><STRONG><a name="[95]"></a>xTaskNotifyWait</STRONG> (Thumb, 140 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[97]"></a>ulTaskNotifyTake</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[96]"></a>xTaskGenericNotify</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[98]"></a>xTaskNotifyWait</STRONG> (Thumb, 140 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[97]"></a>xTaskGenericNotifyFromISR</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
+<P><STRONG><a name="[99]"></a>xTaskGenericNotify</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[98]"></a>vTaskNotifyGiveFromISR</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[9a]"></a>xTaskGenericNotifyFromISR</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
 </UL>
 
-<P><STRONG><a name="[99]"></a>xTaskNotifyStateClear</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[9b]"></a>vTaskNotifyGiveFromISR</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 </UL>
 
-<P><STRONG><a name="[9b]"></a>pxPortInitialiseStack</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, port.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
+<P><STRONG><a name="[9c]"></a>xTaskNotifyStateClear</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[8f]"></a>xPortStartScheduler</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, port.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortStartFirstTask (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<P><STRONG><a name="[9e]"></a>pxPortInitialiseStack</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, port.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
 </UL>
 
-<P><STRONG><a name="[91]"></a>vPortEndScheduler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, port.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskEndScheduler
+<P><STRONG><a name="[92]"></a>xPortStartScheduler</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, port.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortStartFirstTask (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
-<P><STRONG><a name="[48]"></a>vPortEnterCritical</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, port.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerSetTimerID
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTimerGetTimerID
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerIsTimerActive
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyStateClear
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxTaskPriorityGet
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueSpacesAvailable
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueMessagesWaiting
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
+<P><STRONG><a name="[94]"></a>vPortEndScheduler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, port.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskEndScheduler
 </UL>
 
-<P><STRONG><a name="[4a]"></a>vPortExitCritical</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, port.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via Veneer)
+<P><STRONG><a name="[49]"></a>vPortEnterCritical</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, port.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerSetTimerID
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTimerGetTimerID
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerIsTimerActive
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyStateClear
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxTaskPriorityGet
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueSpacesAvailable
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueMessagesWaiting
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerSetTimerID
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTimerGetTimerID
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyStateClear
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxTaskPriorityGet
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueSpacesAvailable
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueMessagesWaiting
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerIsTimerActive
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
 </UL>
 
-<P><STRONG><a name="[69]"></a>pvPortMalloc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, heap_3.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<P><STRONG><a name="[4b]"></a>vPortExitCritical</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, port.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerSetTimerID
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTimerGetTimerID
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyStateClear
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxTaskPriorityGet
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCheckForTimeOut
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueSpacesAvailable
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxQueueMessagesWaiting
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerIsTimerActive
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal
+</UL>
+
+<P><STRONG><a name="[6d]"></a>pvPortMalloc</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, heap_3.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreate
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
 
-<P><STRONG><a name="[79]"></a>vPortFree</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, heap_3.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<P><STRONG><a name="[7c]"></a>vPortFree</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, heap_3.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueDelete
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-</UL>
-
-<P><STRONG><a name="[61]"></a>xTimerGenericCommand</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-</UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueDelete
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 
-<P><STRONG><a name="[8d]"></a>xTimerCreateTimerTask</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<P><STRONG><a name="[50]"></a>xTimerGenericCommand</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback1
+<LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
+</UL>
+
+<P><STRONG><a name="[90]"></a>xTimerCreateTimerTask</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
 <P><STRONG><a name="[64]"></a>xTimerCreate</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialiseItem
+<BR><BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckForValidListAndQueue
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialiseItem
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
-</UL>
-
-<P><STRONG><a name="[a5]"></a>xTimerIsTimerActive</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, timers_1.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLcd
 </UL>
 
-<P><STRONG><a name="[a6]"></a>pvTimerGetTimerID</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, timers_1.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[55]"></a>xTimerIsTimerActive</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+</UL>
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loading
 </UL>
 
-<P><STRONG><a name="[a7]"></a>vTimerSetTimerID</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, timers_1.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[a8]"></a>pvTimerGetTimerID</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, timers_1.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[ab]"></a>lcd_movePen</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
+<P><STRONG><a name="[a9]"></a>vTimerSetTimerID</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, timers_1.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
 
-<P><STRONG><a name="[ae]"></a>lcd_point</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
+<P><STRONG><a name="[ad]"></a>lcd_movePen</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putChar
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_circle
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
+<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
 </UL>
 
-<P><STRONG><a name="[b0]"></a>lcd_setWindow</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
+<P><STRONG><a name="[b0]"></a>lcd_point</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureEnd
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putChar
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_circle
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
 </UL>
 
-<P><STRONG><a name="[53]"></a>lcd_fillScreen</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
+<P><STRONG><a name="[b2]"></a>lcd_setWindow</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureEnd
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
+</UL>
+
+<P><STRONG><a name="[5b]"></a>lcd_fillScreen</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[b1]"></a>lcd_drawRect</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
+<P><STRONG><a name="[b3]"></a>lcd_drawRect</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
 </UL>
 
-<P><STRONG><a name="[5d]"></a>lcd_fillRect</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
+<P><STRONG><a name="[52]"></a>lcd_fillRect</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
-</UL>
-
-<P><STRONG><a name="[b4]"></a>lcd_line</STRONG> (Thumb, 272 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loading
 </UL>
 
-<P><STRONG><a name="[b5]"></a>lcd_circle</STRONG> (Thumb, 644 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+<P><STRONG><a name="[b6]"></a>lcd_line</STRONG> (Thumb, 272 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLine
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
 </UL>
 
-<P><STRONG><a name="[b6]"></a>lcd_putChar</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
-</UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
+<P><STRONG><a name="[b7]"></a>lcd_circle</STRONG> (Thumb, 644 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
 </UL>
 
-<P><STRONG><a name="[5f]"></a>lcd_putString</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putChar
+<P><STRONG><a name="[b8]"></a>lcd_putChar</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
-</UL>
-
-<P><STRONG><a name="[5e]"></a>lcd_fontColor</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
 </UL>
 
-<P><STRONG><a name="[b7]"></a>lcd_pictureBegin</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
+<P><STRONG><a name="[54]"></a>lcd_putString</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
-</UL>
-
-<P><STRONG><a name="[b8]"></a>lcd_pictureData</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
-</UL>
-
-<P><STRONG><a name="[b9]"></a>lcd_pictureEnd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
-</UL>
-
-<P><STRONG><a name="[ba]"></a>lcd_picture</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureEnd
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureData
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
-</UL>
-
-<P><STRONG><a name="[bb]"></a>mdelay</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, lcd_hw.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-</UL>
-
-<P><STRONG><a name="[3d]"></a>lcd_hw_init</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSpi
-</UL>
-<BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
-</UL>
-
-<P><STRONG><a name="[af]"></a>writeToDisp</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureData
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
-</UL>
-
-<P><STRONG><a name="[ad]"></a>writeToReg</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-</UL>
-
-<P><STRONG><a name="[bd]"></a>readFromReg</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-</UL>
-
-<P><STRONG><a name="[ac]"></a>writeLcdCommand</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-</UL>
-
-<P><STRONG><a name="[51]"></a>lcd_init</STRONG> (Thumb, 1044 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readFromReg
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-</UL>
-<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
-</UL>
-
-<P><STRONG><a name="[56]"></a>getTouch</STRONG> (Thumb, 192 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod (via Veneer)
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSpi
-</UL>
-<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
-</UL>
-
-<P><STRONG><a name="[9e]"></a>malloc</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, h1_alloc.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-</UL>
-
-<P><STRONG><a name="[9f]"></a>free</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, h1_free.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-</UL>
-
-<P><STRONG><a name="[44]"></a>__2printf</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, noretval__2printf.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
-</UL>
-<BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loading
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
-<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
-<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
 </UL>
 
-<P><STRONG><a name="[c1]"></a>__printf</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, __printf.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent (via Veneer)
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
-</UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<P><STRONG><a name="[53]"></a>lcd_fontColor</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loading
 </UL>
 
-<P><STRONG><a name="[29]"></a>_printf_int_dec</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, _printf_dec.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_udiv10 (via Veneer)
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_unsigned (Weak Reference)
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_signed (Weak Reference)
+<P><STRONG><a name="[b9]"></a>lcd_pictureBegin</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_u (via Veneer)
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
 </UL>
 
-<P><STRONG><a name="[57]"></a>strcpy</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, strcpy.o(.text))
+<P><STRONG><a name="[ba]"></a>lcd_pictureData</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
+</UL>
+
+<P><STRONG><a name="[bb]"></a>lcd_pictureEnd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
+</UL>
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_picture
+</UL>
+
+<P><STRONG><a name="[bc]"></a>lcd_picture</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcd_grph.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureEnd
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureData
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureBegin
+</UL>
+
+<P><STRONG><a name="[bd]"></a>mdelay</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, lcd_hw.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+</UL>
+
+<P><STRONG><a name="[3e]"></a>lcd_hw_init</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSpi
+</UL>
+<BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
+</UL>
+
+<P><STRONG><a name="[b1]"></a>writeToDisp</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_pictureData
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hLine
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
+</UL>
+
+<P><STRONG><a name="[af]"></a>writeToReg</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+</UL>
+
+<P><STRONG><a name="[bf]"></a>readFromReg</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+</UL>
+
+<P><STRONG><a name="[ae]"></a>writeLcdCommand</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_setWindow
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_movePen
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+</UL>
+
+<P><STRONG><a name="[58]"></a>lcd_init</STRONG> (Thumb, 1044 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readFromReg
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToReg
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeLcdCommand
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
+</UL>
+
+<P><STRONG><a name="[5e]"></a>getTouch</STRONG> (Thumb, 192 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod (via Veneer)
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendSpi
+</UL>
+<BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
+</UL>
+
+<P><STRONG><a name="[a1]"></a>malloc</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, h1_alloc.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
+</UL>
+
+<P><STRONG><a name="[a2]"></a>free</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, h1_free.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+</UL>
+
+<P><STRONG><a name="[45]"></a>__2printf</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, noretval__2printf.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTimerCallback
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLightsTask
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSensorsTask
+<LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartSensors
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartLights
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vStartConsole
+</UL>
+
+<P><STRONG><a name="[c3]"></a>__printf</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, __printf.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent (via Veneer)
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+</UL>
+
+<P><STRONG><a name="[2a]"></a>_printf_int_dec</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, _printf_dec.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_udiv10 (via Veneer)
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_unsigned (Weak Reference)
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_truncate_signed (Weak Reference)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_u (via Veneer)
+</UL>
+
+<P><STRONG><a name="[5f]"></a>strcpy</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, strcpy.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask
 </UL>
 
-<P><STRONG><a name="[3e]"></a>strlen</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, strlen.o(.text))
+<P><STRONG><a name="[3f]"></a>strlen</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, strlen.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vConsoleTask
 </UL>
 
-<P><STRONG><a name="[6d]"></a>__aeabi_memcpy</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rt_memcpy.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue (via Veneer)
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue (via Veneer)
+<P><STRONG><a name="[57]"></a>__aeabi_memcpy</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rt_memcpy.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue (via Veneer)
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue (via Veneer)
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limiter (via Veneer)
 </UL>
 
-<P><STRONG><a name="[c8]"></a>__rt_memcpy</STRONG> (ARM, 212 bytes, Stack size 0 bytes, rt_memcpy.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<P><STRONG><a name="[ca]"></a>__rt_memcpy</STRONG> (ARM, 212 bytes, Stack size 0 bytes, rt_memcpy.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[50]"></a>__aeabi_memcpy4</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rt_memcpy_w.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setButtonController (via Veneer)
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initialiseButtons (via Veneer)
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtonController (via Veneer)
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface (via Veneer)
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limiter (via Veneer)
+<P><STRONG><a name="[5a]"></a>__aeabi_memcpy4</STRONG> (ARM, 0 bytes, Stack size 0 bytes, rt_memcpy_w.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setButtonController (via Veneer)
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initialiseButtons (via Veneer)
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtonController (via Veneer)
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface (via Veneer)
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask (via Veneer)
 </UL>
 
@@ -1100,148 +1125,148 @@ Global Symbols
 
 <P><STRONG><a name="[3]"></a>__rt_heap_expand</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[be]"></a>__rt_heap_descriptor</STRONG> (ARM, 12 bytes, Stack size 0 bytes, rt_heap_descriptor_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc (via Veneer)
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free (via Veneer)
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc (via Veneer)
+<P><STRONG><a name="[c0]"></a>__rt_heap_descriptor</STRONG> (ARM, 12 bytes, Stack size 0 bytes, rt_heap_descriptor_intlibspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc (via Veneer)
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free (via Veneer)
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc (via Veneer)
 </UL>
 
 <P><STRONG><a name="[9]"></a>_terminate_user_alloc</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, init_alloc.o(.text), UNUSED)
 
 <P><STRONG><a name="[6]"></a>_init_user_alloc</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, init_alloc.o(.text), UNUSED)
 
-<P><STRONG><a name="[bf]"></a>__Heap_Full</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, init_alloc.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<P><STRONG><a name="[c1]"></a>__Heap_Full</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, init_alloc.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-</UL>
-
-<P><STRONG><a name="[ca]"></a>__Heap_Broken</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, init_alloc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
 
-<P><STRONG><a name="[2b]"></a>_init_alloc</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, init_alloc.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_heap_2
+<P><STRONG><a name="[cc]"></a>__Heap_Broken</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, init_alloc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
 </UL>
 
-<P><STRONG><a name="[cc]"></a>__Heap_Initialize</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, h1_init.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<P><STRONG><a name="[2c]"></a>_init_alloc</STRONG> (Thumb, 94 bytes, Stack size 0 bytes, init_alloc.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_ProvideMemory
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Initialize
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor (via Veneer)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_heap_2
+</UL>
+
+<P><STRONG><a name="[ce]"></a>__Heap_Initialize</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, h1_init.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
 <P><STRONG><a name="[5]"></a>__Heap_DescSize</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, h1_init.o(.text), UNUSED)
 
-<P><STRONG><a name="[c7]"></a>_printf_int_common</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, _printf_intcommon.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
+<P><STRONG><a name="[c9]"></a>_printf_int_common</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, _printf_intcommon.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-</UL>
-
-<P><STRONG><a name="[c0]"></a>_printf_char_file</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, _printf_char_file.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
-</UL>
-<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[c6]"></a>__rt_udiv10</STRONG> (ARM, 44 bytes, Stack size 0 bytes, rtudiv10.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec (via Veneer)
+<P><STRONG><a name="[c2]"></a>_printf_char_file</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, _printf_char_file.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
+</UL>
+<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 
-<P><STRONG><a name="[d3]"></a>__user_perproc_libspace</STRONG> (ARM, 0 bytes, Stack size 0 bytes, libspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[c8]"></a>__rt_udiv10</STRONG> (ARM, 44 bytes, Stack size 0 bytes, rtudiv10.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec (via Veneer)
 </UL>
 
-<P><STRONG><a name="[c9]"></a>__Heap_ProvideMemory</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, h1_extend.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
-</UL>
-<BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
+<P><STRONG><a name="[d5]"></a>__user_perproc_libspace</STRONG> (ARM, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[cf]"></a>_printf_char_common</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[cb]"></a>__Heap_ProvideMemory</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, h1_extend.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
-</UL>
-
-<P><STRONG><a name="[cb]"></a>__rt_SIGRTMEM</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, defsig_rtmem_outer.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Broken
+<BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 </UL>
 
-<P><STRONG><a name="[2d]"></a>__user_setup_stackheap</STRONG> (ARM, 96 bytes, Stack size 0 bytes, sys_stackheap_outer.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<P><STRONG><a name="[d1]"></a>_printf_char_common</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
-</UL>
-
-<P><STRONG><a name="[31]"></a>exit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, exit.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit (via Veneer)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 
-<P><STRONG><a name="[d2]"></a>__sig_exit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, defsig_exit.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+<P><STRONG><a name="[cd]"></a>__rt_SIGRTMEM</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, defsig_rtmem_outer.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
-</UL>
-
-<P><STRONG><a name="[d1]"></a>__rt_SIGRTMEM_inner</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, defsig_rtmem_inner.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
-</UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+<BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Broken
 </UL>
 
-<P><STRONG><a name="[d7]"></a>__default_signal_display</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, defsig_general.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+<P><STRONG><a name="[2e]"></a>__user_setup_stackheap</STRONG> (ARM, 96 bytes, Stack size 0 bytes, sys_stackheap_outer.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
-</UL>
-
-<P><STRONG><a name="[49]"></a>__aeabi_uidivmod</STRONG> (ARM, 36 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text_udiv))
-<BR><BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div_large
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div2
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div5
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div8
-</UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch (via Veneer)
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal (via Veneer)
+<BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[9c]"></a>vPortStartFirstTask</STRONG> (ARM, 0 bytes, Stack size 0 bytes, portasm.o(PORT_ASM))
-<BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler (via Veneer)
+<P><STRONG><a name="[32]"></a>exit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, exit.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit (via Veneer)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[68]"></a>vPortYield</STRONG> (ARM, 0 bytes, Stack size 0 bytes, portasm.o(PORT_ASM))
-<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask (via Veneer)
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify (via Veneer)
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait (via Veneer)
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake (via Veneer)
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume (via Veneer)
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend (via Veneer)
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet (via Veneer)
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay (via Veneer)
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete (via Veneer)
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask (via Veneer)
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList (via Veneer)
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll (via Veneer)
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset (via Veneer)
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil (via Veneer)
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend (via Veneer)
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive (via Veneer)
+<P><STRONG><a name="[d4]"></a>__sig_exit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, defsig_exit.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+</UL>
+
+<P><STRONG><a name="[d3]"></a>__rt_SIGRTMEM_inner</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, defsig_rtmem_inner.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__default_signal_display
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
+</UL>
+
+<P><STRONG><a name="[d9]"></a>__default_signal_display</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, defsig_general.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ttywrch
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
+</UL>
+
+<P><STRONG><a name="[4a]"></a>__aeabi_uidivmod</STRONG> (ARM, 36 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text_udiv))
+<BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div_large
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div2
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div5
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__arm_div8
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch (via Veneer)
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPortInitMinimal (via Veneer)
+</UL>
+
+<P><STRONG><a name="[9f]"></a>vPortStartFirstTask</STRONG> (ARM, 0 bytes, Stack size 0 bytes, portasm.o(PORT_ASM))
+<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler (via Veneer)
+</UL>
+
+<P><STRONG><a name="[6c]"></a>vPortYield</STRONG> (ARM, 0 bytes, Stack size 0 bytes, portasm.o(PORT_ASM))
+<BR><BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask (via Veneer)
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify (via Veneer)
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait (via Veneer)
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake (via Veneer)
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume (via Veneer)
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend (via Veneer)
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPrioritySet (via Veneer)
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay (via Veneer)
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete (via Veneer)
+<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask (via Veneer)
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddNewTaskToReadyList (via Veneer)
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll (via Veneer)
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReset (via Veneer)
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil (via Veneer)
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend (via Veneer)
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive (via Veneer)
 </UL>
 
 <P><STRONG><a name="[d]"></a>vPortYieldProcessor</STRONG> (ARM, 0 bytes, Stack size 0 bytes, portasm.o(PORT_ASM))
@@ -1251,32 +1276,32 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> lpc2400.o(RESET)
 <LI> port.o(.text)
 </UL>
-<P><STRONG><a name="[a9]"></a>__ARM_common_call_via_r1</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, timers_1.o(i.__ARM_common_call_via_r1))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<P><STRONG><a name="[ab]"></a>__ARM_common_call_via_r1</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, timers_1.o(i.__ARM_common_call_via_r1))
+<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
 </UL>
 
-<P><STRONG><a name="[c3]"></a>__ARM_common_call_via_r2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, __printf.o(i.__ARM_common_call_via_r2))
-<BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[c5]"></a>__ARM_common_call_via_r2</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, __printf.o(i.__ARM_common_call_via_r2))
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
-<P><STRONG><a name="[8e]"></a>__ARM_common_disable_irq</STRONG> (ARM, 20 bytes, Stack size 0 bytes, tasks.o(i.__ARM_common_disable_irq))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskEndScheduler (via Veneer)
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical (via Veneer)
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler (via Veneer)
+<P><STRONG><a name="[91]"></a>__ARM_common_disable_irq</STRONG> (ARM, 20 bytes, Stack size 0 bytes, tasks.o(i.__ARM_common_disable_irq))
+<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskEndScheduler (via Veneer)
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical (via Veneer)
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler (via Veneer)
 </UL>
 
-<P><STRONG><a name="[9d]"></a>__ARM_common_enable_irq</STRONG> (ARM, 16 bytes, Stack size 0 bytes, port.o(i.__ARM_common_enable_irq))
-<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical (via Veneer)
+<P><STRONG><a name="[a0]"></a>__ARM_common_enable_irq</STRONG> (ARM, 16 bytes, Stack size 0 bytes, port.o(i.__ARM_common_enable_irq))
+<BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical (via Veneer)
 </UL>
 
-<P><STRONG><a name="[58]"></a>__ARM_common_switch8</STRONG> (ARM, 24 bytes, Stack size 0 bytes, lcd.o(i.__ARM_common_switch8))
-<BR><BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands (via Veneer)
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR (via Veneer)
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify (via Veneer)
+<P><STRONG><a name="[60]"></a>__ARM_common_switch8</STRONG> (ARM, 24 bytes, Stack size 0 bytes, lcd.o(i.__ARM_common_switch8))
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands (via Veneer)
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotifyFromISR (via Veneer)
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericNotify (via Veneer)
 <LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vLcdTask (via Veneer)
 </UL>
 <P>
@@ -1311,288 +1336,291 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lpc2400.o(RESET)
 </UL>
-<P><STRONG><a name="[36]"></a>prvSetupHardware</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_hw_init
+<P><STRONG><a name="[37]"></a>prvSetupHardware</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_hw_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[15]"></a>vConsoleTask</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, console.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSerialPutString
+<BR><BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialPutChar
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xSerialGetChar
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vSerialPutString
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> console.o(.text)
 </UL>
-<P><STRONG><a name="[18]"></a>vLcdTask</STRONG> (Thumb, 1136 bytes, Stack size 0 bytes, lcd.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setButtonController
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initialiseButtons
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtonController
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limiter
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[18]"></a>vLcdTask</STRONG> (Thumb, 1558 bytes, Stack size 0 bytes, lcd.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setButtonController
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_putString
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillScreen
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initialiseButtons
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtonController
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drawDefaultInterface
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;limiter
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;loading
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lcd.o(.text)
 </UL>
-<P><STRONG><a name="[1a]"></a>vSensorsTask</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, sensors.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtons
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<P><STRONG><a name="[1b]"></a>vSensorsTask</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, sensors.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getButtons
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sensors.o(.text)
 </UL>
-<P><STRONG><a name="[1b]"></a>vLightsTask</STRONG> (Thumb, 268 bytes, Stack size 0 bytes, ledlights.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;brightness
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getleds
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[1c]"></a>vLightsTask</STRONG> (Thumb, 326 bytes, Stack size 0 bytes, ledlights.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;brightness
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getleds
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ledlights.o(.text)
 </UL>
-<P><STRONG><a name="[6a]"></a>prvUnlockQueue</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskMissedYield
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[6e]"></a>prvUnlockQueue</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskRemoveFromEventList
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskMissedYield
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-</UL>
-
-<P><STRONG><a name="[6c]"></a>prvCopyDataToQueue</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[73]"></a>prvCopyDataFromQueue</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
+<P><STRONG><a name="[70]"></a>prvCopyDataToQueue</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
-</UL>
-
-<P><STRONG><a name="[74]"></a>prvIsQueueEmpty</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, queue.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 </UL>
 
-<P><STRONG><a name="[7c]"></a>prvAddNewTaskToReadyList</STRONG> (Thumb, 180 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[76]"></a>prvCopyDataFromQueue</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueuePeekFromISR
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[83]"></a>prvAddCurrentTaskToDelayedList</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<P><STRONG><a name="[77]"></a>prvIsQueueEmpty</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, queue.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnUnorderedEventList
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
 
-<P><STRONG><a name="[1d]"></a>prvIdleTask</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<P><STRONG><a name="[7f]"></a>prvAddNewTaskToReadyList</STRONG> (Thumb, 180 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+</UL>
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+</UL>
+
+<P><STRONG><a name="[86]"></a>prvAddCurrentTaskToDelayedList</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulTaskNotifyTake
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnUnorderedEventList
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventListRestricted
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskPlaceOnEventList
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelayUntil
+</UL>
+
+<P><STRONG><a name="[1e]"></a>prvIdleTask</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> tasks.o(.text)
 </UL>
-<P><STRONG><a name="[7e]"></a>prvInitialiseNewTask</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pxPortInitialiseStack
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialiseItem
+<P><STRONG><a name="[81]"></a>prvInitialiseNewTask</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pxPortInitialiseStack
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialiseItem
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
-</UL>
-
-<P><STRONG><a name="[82]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
-<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 </UL>
 
-<P><STRONG><a name="[81]"></a>prvDeleteTCB</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
-</UL>
-
-<P><STRONG><a name="[8a]"></a>prvTaskIsTaskSuspended</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<P><STRONG><a name="[85]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 </UL>
 
-<P><STRONG><a name="[8c]"></a>prvCheckTasksWaitingTermination</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, tasks.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<P><STRONG><a name="[84]"></a>prvDeleteTCB</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelete
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 </UL>
 
-<P><STRONG><a name="[a0]"></a>prvInsertTimerInActiveList</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<P><STRONG><a name="[8d]"></a>prvTaskIsTaskSuspended</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, tasks.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeFromISR
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
 </UL>
 
-<P><STRONG><a name="[1e]"></a>prvTimerTask</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+<P><STRONG><a name="[8f]"></a>prvCheckTasksWaitingTermination</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, tasks.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIdleTask
+</UL>
+
+<P><STRONG><a name="[a3]"></a>prvInsertTimerInActiveList</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
+</UL>
+
+<P><STRONG><a name="[1f]"></a>prvTimerTask</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> timers_1.o(.text)
 </UL>
-<P><STRONG><a name="[a4]"></a>prvCheckForValidListAndQueue</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<P><STRONG><a name="[a7]"></a>prvCheckForValidListAndQueue</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInitialise
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreateTimerTask
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerCreate
 </UL>
 
-<P><STRONG><a name="[a3]"></a>prvProcessReceivedCommands</STRONG> (Thumb, 156 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
+<P><STRONG><a name="[a6]"></a>prvProcessReceivedCommands</STRONG> (Thumb, 156 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via Veneer)
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTimerTask
-</UL>
-
-<P><STRONG><a name="[a2]"></a>prvProcessTimerOrBlockTask</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-</UL>
-<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTimerTask
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTimerTask
 </UL>
 
-<P><STRONG><a name="[a8]"></a>prvSampleTimeNow</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<P><STRONG><a name="[a5]"></a>prvProcessTimerOrBlockTask</STRONG> (Thumb, 146 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertTimerInActiveList
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield (via Veneer)
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vQueueWaitForMessageRestricted
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
-</UL>
-
-<P><STRONG><a name="[aa]"></a>prvSwitchTimerLists</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, timers_1.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTimerTask
 </UL>
 
-<P><STRONG><a name="[b2]"></a>hLine</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+<P><STRONG><a name="[aa]"></a>prvSampleTimeNow</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_drawRect
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
-</UL>
-
-<P><STRONG><a name="[b3]"></a>vLine</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_grph.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_drawRect
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
 </UL>
 
-<P><STRONG><a name="[bc]"></a>sendSpi</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_hw.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch
-<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_hw_init
+<P><STRONG><a name="[ac]"></a>prvSwitchTimerLists</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, timers_1.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_call_via_r1
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTimerGenericCommand
+</UL>
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
 </UL>
 
-<P><STRONG><a name="[da]"></a>__arm_div8</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<P><STRONG><a name="[b4]"></a>hLine</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeToDisp
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_drawRect
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
 </UL>
 
-<P><STRONG><a name="[d9]"></a>__arm_div5</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<P><STRONG><a name="[b5]"></a>vLine</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_grph.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_point
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_line
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_drawRect
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_fillRect
 </UL>
 
-<P><STRONG><a name="[d8]"></a>__arm_div2</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<P><STRONG><a name="[be]"></a>sendSpi</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_hw.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTouch
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_hw_init
 </UL>
 
-<P><STRONG><a name="[db]"></a>__arm_div_large</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<P><STRONG><a name="[dc]"></a>__arm_div8</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
 
-<P><STRONG><a name="[20]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
+<P><STRONG><a name="[db]"></a>__arm_div5</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+
+<P><STRONG><a name="[da]"></a>__arm_div2</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+
+<P><STRONG><a name="[dd]"></a>__arm_div_large</STRONG> (ARM, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+</UL>
+
+<P><STRONG><a name="[21]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_common.o(.text)
 </UL><P>
 <H3>
 Undefined Global Symbols
 </H3>
-<P><STRONG><a name="[d5]"></a>_call_atexit_fns</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<P><STRONG><a name="[d7]"></a>_call_atexit_fns</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[ce]"></a>_printf_post_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<P><STRONG><a name="[d0]"></a>_printf_post_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
-<P><STRONG><a name="[cd]"></a>_printf_pre_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<P><STRONG><a name="[cf]"></a>_printf_pre_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
-<P><STRONG><a name="[c4]"></a>_printf_truncate_signed</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
+<P><STRONG><a name="[c6]"></a>_printf_truncate_signed</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[c5]"></a>_printf_truncate_unsigned</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
+<P><STRONG><a name="[c7]"></a>_printf_truncate_unsigned</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 <HR></body></html>

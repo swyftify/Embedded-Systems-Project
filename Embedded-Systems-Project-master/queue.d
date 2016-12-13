@@ -1,9 +1,9 @@
 .\queue.o: ..\FreeRTOS\Source\queue.c
-.\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\queue.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
+.\queue.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\string.h
 .\queue.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\queue.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\queue.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\queue.o: .\FreeRTOSConfig.h
 .\queue.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\queue.o: ..\FreeRTOS\Source\include\projdefs.h

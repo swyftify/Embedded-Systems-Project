@@ -5,9 +5,10 @@ typedef struct Button{
 	unsigned int xpos;
 	unsigned int ypos;
 	unsigned int length;
+	unsigned short lengthx;
 	unsigned short textXpos;
 	unsigned short textYpos;
-	unsigned char text[20];
+	unsigned char text[15];
 	unsigned short fontColor;
 	unsigned short backgroundFontColor;
 	unsigned short buttonColor;

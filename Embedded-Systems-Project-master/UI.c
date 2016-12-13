@@ -11,29 +11,29 @@ Button adjusters[8];
 Button adjusterReading[4];
 
 ButtonController initialiseButtons(){
-	Button masterButtonOn = {20,20,65,25,50,"MASTER OFF",BLACK,RED,RED,0};
+	Button masterButtonOn = {20,20,65,0,25,50,"MASTER OFF",BLACK,RED,RED,0};
 	
-	Button dimmerOne = {20,90,50,40,110,"D1",BLACK,RED,RED,0};
-	Button dimmerTwo = {20,145,50,40,165,"D2",BLACK,RED,RED,0};
-	Button dimmerThree = {20,200,50,40,225,"D3",BLACK,RED,RED,0};
-	Button dimmerFour = {20,255,50,40,275,"D4",BLACK,RED,RED,0};
+	Button dimmerOne = {20,90,50,0,23,110,"Aisle R.",BLACK,LIGHT_GRAY,LIGHT_GRAY,0};
+	Button dimmerTwo = {20,145,50,0,23,165,"Aisle L.",BLACK,LIGHT_GRAY,LIGHT_GRAY,0};
+	Button dimmerThree = {20,200,50,0,25,225,"W.Board",BLACK,LIGHT_GRAY,LIGHT_GRAY,0};
+	Button dimmerFour = {20,255,50,0,35,275,"Hall",BLACK,LIGHT_GRAY,LIGHT_GRAY,0};
 	
-	Button presetOne = {90, 20, 65, 100, 50, "PRESET 1", BLACK, CYAN,CYAN,0};
-	Button presetTwo = {160, 20, 65, 170, 50, "PRESET 2", BLACK, CYAN, CYAN, 0};
+	Button presetOne = {90, 20, 65,0, 93, 50, "DIM PRESET", BLACK, CYAN,CYAN,0};
+	Button presetTwo = {160, 20, 65,0, 165, 50, "CHRISTMASS", BLACK, CYAN, CYAN, 0};
 	
-	Button adjusterDimmerOnePlus = {75,90,50,95,110,"+",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerOneMinus = {130,90,50,150,110,"-",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerTwoPlus = {75,145,50,95,165,"+",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerTwoMinus = {130,145,50,150,165,"-",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerThreePlus = {75,200,50,95,225,"+",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerThreeMinus = {130,200,50,150,225,"-",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerFourPlus = {75,255,50,95,275,"+",WHITE,OLIVE,OLIVE};
-	Button adjusterDimmerFourMinus = {130,255,50,150,275,"-",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerOnePlus = {75,90,50,0,95,110,"+",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerOneMinus = {130,90,50,0,150,110,"-",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerTwoPlus = {75,145,50,0,95,165,"+",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerTwoMinus = {130,145,50,0,150,165,"-",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerThreePlus = {75,200,50,0,95,225,"+",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerThreeMinus = {130,200,50,0,150,225,"-",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerFourPlus = {75,255,50,0,95,275,"+",WHITE,OLIVE,OLIVE};
+	Button adjusterDimmerFourMinus = {130,255,50,0,150,275,"-",WHITE,OLIVE,OLIVE};
 	
-	Button adjusterReadingOne = {185,90,50,205,110,"0",WHITE,BLACK,BLACK};
-	Button adjusterReadingTwo = {185,145,50,205,165,"0",WHITE,BLACK,BLACK};
-	Button adjusterReadingThree = {185,200,50,205,225,"0",WHITE,BLACK,BLACK};
-	Button adjusterReadingFour = {185,255,50,205,275,"0",WHITE,BLACK,BLACK};
+	Button adjusterReadingOne = {185,90,50,40,205,110,"",WHITE,BLACK,GREEN};
+	Button adjusterReadingTwo = {185,145,50,40,205,165,"",WHITE,BLACK,GREEN};
+	Button adjusterReadingThree = {185,200,50,40,205,225,"",WHITE,BLACK,GREEN};
+	Button adjusterReadingFour = {185,255,50,40,205,275,"",WHITE,BLACK,GREEN};
 	
 	adjusters[0] = adjusterDimmerOnePlus;
 	adjusters[1] = adjusterDimmerOneMinus;
@@ -65,6 +65,7 @@ ButtonController initialiseButtons(){
 	buttonController.dimmers=dimmers;
 	buttonController.presets = presets;
 	
+	
 	return buttonController;
 }
 
@@ -75,6 +76,8 @@ void drawDefaultInterface(){
 		lcd_fillRect(masterButtonOn.xpos,masterButtonOn.ypos,masterButtonOn.xpos+masterButtonOn.length,masterButtonOn.ypos+masterButtonOn.length,masterButtonOn.buttonColor);
 		lcd_fontColor(masterButtonOn.fontColor, masterButtonOn.backgroundFontColor);
 		lcd_putString(masterButtonOn.textXpos,masterButtonOn.textYpos,masterButtonOn.text);
+	
+
 	
 		for(;i<4;i++){
 			lcd_fillRect(buttonController.dimmers[i].xpos,buttonController.dimmers[i].ypos,buttonController.dimmers[i].xpos+buttonController.dimmers[i].length,
@@ -100,12 +103,13 @@ void drawDefaultInterface(){
 		}
 		i = 0;
 		for(;i<4;i++){
-			lcd_fillRect(buttonController.adjusterReading[i].xpos,buttonController.adjusterReading[i].ypos,buttonController.adjusterReading[i].xpos+buttonController.adjusterReading[i].length,
+			lcd_fillRect(buttonController.adjusterReading[i].xpos,buttonController.adjusterReading[i].ypos,buttonController.adjusterReading[i].xpos+buttonController.adjusterReading[i].lengthx,
 				buttonController.adjusterReading[i].ypos+buttonController.adjusterReading[i].length,buttonController.adjusterReading[i].buttonColor);
 			lcd_fontColor(buttonController.adjusterReading[i].fontColor, buttonController.adjusterReading[i].backgroundFontColor);
 			lcd_putString(buttonController.adjusterReading[i].textXpos,buttonController.adjusterReading[i].textYpos,buttonController.adjusterReading[i].text);
 		}
-		
+		i = 0;
+
 }
 
 void setButtonController(ButtonController newController){

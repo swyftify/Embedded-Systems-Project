@@ -1,8 +1,8 @@
 .\timers_1.o: FreeRTOS\Source\timers.c
-.\timers_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\timers_1.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
 .\timers_1.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\timers_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\timers_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\timers_1.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\timers_1.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\timers_1.o: .\FreeRTOSConfig.h
 .\timers_1.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\timers_1.o: ..\FreeRTOS\Source\include\projdefs.h

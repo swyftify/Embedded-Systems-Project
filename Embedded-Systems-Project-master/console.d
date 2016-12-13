@@ -1,10 +1,10 @@
 .\console.o: console.c
-.\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\console.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
+.\console.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdio.h
+.\console.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\string.h
 .\console.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\console.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\console.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\console.o: .\FreeRTOSConfig.h
 .\console.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\console.o: ..\FreeRTOS\Source\include\projdefs.h

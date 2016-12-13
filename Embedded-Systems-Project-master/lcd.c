@@ -16,7 +16,7 @@
 #include <string.h>
 #include "UI.h"
 #include "sensors.h"
-
+#include "timers.h"
 #include "task.h"
 #include "queue.h"
 #include "commands.h"
@@ -29,6 +29,7 @@ void drawDefaultUI();
 /* Interrupt handlers */
 extern void vLCD_ISREntry( void );
 void vLCD_ISRHandler( void );
+void vTimerCallback1(TimerHandle_t xTimer);
 
 /* The LCD task. */
 static void vLcdTask( void *pvParameters );
@@ -37,6 +38,14 @@ static void vLcdTask( void *pvParameters );
 xSemaphoreHandle xLcdSemphr;
 
 xQueueHandle localQueue;
+
+TimerHandle_t timer;
+
+int x0 = 0;
+int y0 = 313;
+int x1 = 0;
+int y1 = 315;
+
 
 void vStartLcd( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 {
@@ -47,6 +56,8 @@ void vStartLcd( unsigned portBASE_TYPE uxPriority, xQueueHandle xQueue)
 	localQueue = xQueue;
 	/* Spawn the console task. */
 	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", lcdSTACK_SIZE, &localQueue, uxPriority, ( xTaskHandle * ) NULL );
+	
+	timer = xTimerCreate("Main Light Timer" ,500, pdFALSE, ( void * ) 0, vTimerCallback1 );
 }
 
 static ButtonController buttonController; 
@@ -65,6 +76,19 @@ Command limiter(Command cmd, int incrementFlag, int lightIndex){
 	return cmd;
 }
 
+void vTimerCallback1(TimerHandle_t xTimer){
+	xTimerStop( xTimer, 0 );
+}
+
+void loading(){
+	while(xTimerIsTimerActive(timer)){
+		lcd_fillRect(x0,y0,x1,y1, BLUE);
+		lcd_fontColor(WHITE, BLACK);
+		lcd_putString(80,307,"LOADING CHANGES");
+		x1+=2;
+	}
+	x1 = 0;
+}
 
 static portTASK_FUNCTION( vLcdTask, pvParameters )
 {
@@ -74,6 +98,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	int i = 0;
 	int j = 0;
 	int total = 0;
+	int activePreset = 0;
 
 	Command cmd;
 	Command cmdToInterface;
@@ -104,6 +129,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	 * the queue. */
 	for( ;; )
 	{
+		lcd_putString(25,10,"When Lights Go Off Tap To Refresh");
 		
 		buttonController = getButtonController();
 		printf("lcd controller %u \r\n", buttonController.masterButton.buttonOn);
@@ -128,8 +154,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		/* Start polling the touchscreen pressure and position ( getTouch(...) ) */
 		/* Keep polling until pressure == 0 */
 		getTouch(&xPos, &yPos, &pressure);
-		
-		//changedState = currentState ^ lastState;
+
 		
 		if((xPos >= buttonController.masterButton.xpos && xPos <= buttonController.masterButton.xpos+buttonController.masterButton.length) 
 				&& (yPos >= buttonController.masterButton.ypos && yPos <= buttonController.masterButton.ypos+buttonController.masterButton.length)){
@@ -138,13 +163,18 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 				buttonController.masterButton.buttonColor = GREEN;
 				buttonController.masterButton.backgroundFontColor = GREEN;
 				strcpy(buttonController.masterButton.text, "MASTER ON");
+				for(;i < 4;i++){
+					cmd.brightnessLevels[i] = 3;
+				}
 				cmd.masterSwitch = 1;
-				
 			}else{
 				buttonController.masterButton.buttonOn = 0;
 				buttonController.masterButton.buttonColor = RED;
 				buttonController.masterButton.backgroundFontColor = RED;
 				strcpy(buttonController.masterButton.text, "MASTER OFF");	
+				for(;i < 4;i++){
+					cmd.brightnessLevels[i] = 0;
+				}
 				cmd.masterSwitch = 0;
 				
 			}
@@ -159,12 +189,16 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 					buttonController.dimmers[i].backgroundFontColor = GREEN;
 					buttonController.dimmers[i].buttonOn = 1;
 					cmd.brightnessLevels[i] = 3;
+					buttonController.adjusterReading[i].buttonColor = WHITE;
+					buttonController.adjusterReading[i].lengthx = 40;
 					total++;
 				}else{
-					buttonController.dimmers[i].buttonColor = RED;
-					buttonController.dimmers[i].backgroundFontColor = RED;
+					buttonController.dimmers[i].buttonColor = LIGHT_GRAY;
+					buttonController.dimmers[i].backgroundFontColor = LIGHT_GRAY;
 					buttonController.dimmers[i].buttonOn = 0;
 					cmd.brightnessLevels[i] = 0;
+					buttonController.adjusterReading[i].buttonColor = BLACK;
+					strcpy(buttonController.adjusterReading[i].text, "OFF");
 					total--;
 				}
 			}
@@ -174,20 +208,42 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 		for(;j<2;j++){
 			if((xPos >= buttonController.presets[j].xpos && xPos <= buttonController.presets[j].xpos+buttonController.presets[j].length) 
 					&& (yPos >= buttonController.presets[j].ypos && yPos <= buttonController.presets[j].ypos+buttonController.presets[j].length)){
-				if(buttonController.presets[j].buttonOn == 0){
+				if(buttonController.presets[j].buttonOn == 0 && activePreset == 0){
+					activePreset++;
 					buttonController.presets[j].buttonColor = YELLOW;
 					buttonController.presets[j].backgroundFontColor = YELLOW;
 					buttonController.presets[j].buttonOn = 1;
-					
-				}else{
+					cmd.presetArray[j] = 1;
+						switch(j){
+							case 0:
+								cmd.brightnessLevels[0] = 1;
+								cmd.brightnessLevels[1] = 1;
+								cmd.brightnessLevels[2] = 1;
+								cmd.brightnessLevels[3] = 1;
+								break;
+							case 1:
+								cmd.brightnessLevels[0] = 1;
+								cmd.brightnessLevels[1] = 2;
+								cmd.brightnessLevels[2] = 3;
+								cmd.brightnessLevels[3] = 3;
+							break;
+							default:
+								break;
+					}
+				}else if(buttonController.presets[j].buttonOn == 1 && activePreset == 1){
+					activePreset--;
 					buttonController.presets[j].buttonColor = CYAN;
 					buttonController.presets[j].backgroundFontColor = CYAN;
 					buttonController.presets[j].buttonOn = 0;
-					
+					cmd.presetArray[j] = 0;
+					for(i = 0;i < 4;i++){
+						cmd.brightnessLevels[i] = 0;
+					}
 				}
 			}
 		}
 		j = 0;
+		i = 0;
 		
 		for(;i<8;i++){
 			if((xPos >= buttonController.adjusters[i].xpos && xPos <= buttonController.adjusters[i].xpos+buttonController.adjusters[i].length) 
@@ -229,17 +285,45 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 				buttonController.dimmers[i].backgroundFontColor = GREEN;
 				buttonController.dimmers[i].buttonOn = 1;
 			}else{
-				buttonController.dimmers[i].buttonColor = RED;
-				buttonController.dimmers[i].backgroundFontColor = RED;
+				buttonController.dimmers[i].buttonColor = LIGHT_GRAY;
+				buttonController.dimmers[i].backgroundFontColor = LIGHT_GRAY;
 				buttonController.dimmers[i].buttonOn = 0;
 			}
 		}
 		i = 0;
-		
+		for(;i<4;i++){
+			switch(cmd.brightnessLevels[i]){
+				case 0:
+					buttonController.adjusterReading[i].buttonColor = BLACK;
+					buttonController.adjusterReading[i].lengthx = 13;
+					strcpy(buttonController.adjusterReading[i].text, "OFF");
+					break;
+				case 1:
+					buttonController.adjusterReading[i].buttonColor = GREEN;
+					strcpy(buttonController.adjusterReading[i].text, "");
+					buttonController.adjusterReading[i].lengthx = 13;
+					break;
+				case 2:
+					buttonController.adjusterReading[i].buttonColor = YELLOW;
+					strcpy(buttonController.adjusterReading[i].text, "");
+					buttonController.adjusterReading[i].lengthx = 27;
+					break;
+				case 3:
+					buttonController.adjusterReading[i].buttonColor = WHITE;
+					strcpy(buttonController.adjusterReading[i].text, "");
+					buttonController.adjusterReading[i].lengthx = 40;
+					break;
+				default:
+					break;
+			}
+		}
+		i = 0;
 					
 		setButtonController(buttonController);
 		//lastState = currentState;
 		
+		xTimerStart(timer, 0);
+		loading();
 		
 		while (pressure > 0)
 		{
@@ -264,6 +348,7 @@ static portTASK_FUNCTION( vLcdTask, pvParameters )
 	}
 }
 	
+
 
 void vLCD_ISRHandler( void )
 {

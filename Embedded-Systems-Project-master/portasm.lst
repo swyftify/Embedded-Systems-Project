@@ -693,7 +693,7 @@ ARM Macro Assembler    Page 11
 Command Line: --xref --diag_suppress=9931 --apcs=interwork --depend=.\portasm.d
  -o.\portasm.o -I..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -IC:\Keil_v5\ARM\
 RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefin
-e="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 522" --list=.\portasm.lst
+e="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 516" --list=.\portasm.lst
  ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portASM.s
 
 
@@ -801,9 +801,9 @@ Symbol: pxCurrentTCB
       At line 58 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro
 .inc
    Uses
-      At line 65 in macro portRESTORE_CONTEXT
+      At line 65 in macro ÿÿortYieldBONTEXT
       at line 85 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portASM.s
-      At line 114 in macro portSAVE_CONTEXT
+      At line 114 in macro  2TEXT
       at line 112 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portASM.
 s
 
@@ -814,9 +814,9 @@ Symbol: ulCriticalNesting
       At line 57 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro
 .inc
    Uses
-      At line 69 in macro portRESTORE_CONTEXT
+      At line 69 in macro ÿÿortYieldBONTEXT
       at line 85 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portASM.s
-      At line 110 in macro portSAVE_CONTEXT
+      At line 110 in macro  2TEXT
       at line 112 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portASM.
 s
 

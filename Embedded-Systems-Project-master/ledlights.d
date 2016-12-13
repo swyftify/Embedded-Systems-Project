@@ -1,7 +1,7 @@
 .\ledlights.o: ledlights.c
 .\ledlights.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\ledlights.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\ledlights.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\ledlights.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\ledlights.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\ledlights.o: .\FreeRTOSConfig.h
 .\ledlights.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\ledlights.o: ..\FreeRTOS\Source\include\projdefs.h
@@ -13,8 +13,8 @@
 .\ledlights.o: ..\FreeRTOS\Source\include\task.h
 .\ledlights.o: ..\FreeRTOS\Source\include\list.h
 .\ledlights.o: ..\FreeRTOS\Source\include\queue.h
-.\ledlights.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\ledlights.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\ledlights.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdio.h
+.\ledlights.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\string.h
 .\ledlights.o: sensors.h
 .\ledlights.o: commands.h
 .\ledlights.o: lcd.h

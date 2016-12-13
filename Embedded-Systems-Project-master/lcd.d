@@ -1,7 +1,7 @@
 .\lcd.o: lcd.c
 .\lcd.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\lcd.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
+.\lcd.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
 .\lcd.o: .\FreeRTOSConfig.h
 .\lcd.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\lcd.o: ..\FreeRTOS\Source\include\projdefs.h
@@ -16,8 +16,9 @@
 .\lcd.o: lcd.h
 .\lcd.o: .\LCD\lcd_hw.h
 .\lcd.o: .\LCD\lcd_grph.h
-.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\lcd.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdio.h
+.\lcd.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\string.h
 .\lcd.o: UI.h
 .\lcd.o: sensors.h
+.\lcd.o: timers.h
 .\lcd.o: commands.h

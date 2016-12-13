@@ -144,6 +144,7 @@ void vTimerCallback( TimerHandle_t xTimer ) {
 	//Stop the timer when it expires
 	xTimerStop( xTimer, 0 );
 	getleds(0x00);
+	
 	printf("Timer Expired");
 }
 
@@ -190,6 +191,14 @@ static portTASK_FUNCTION( vLightsTask, pvParameters )
 			}
 			if(cmd.masterSwitch == 0){
 				defaultMask = 0x00;
+			}
+			if(cmd.presetArray[1] == 1){
+				brightness(0x02,0xC0);
+				brightness(0x04,0x10);					
+			}
+			else if(cmd.presetArray[1] == 0){
+				brightness(0x02,0x01);	
+				brightness(0x04,0x01);		
 			}
 			
 			for(i = 0;i<4;i++){
