@@ -1,4 +1,4 @@
-.\timers.o: timers.c
+.\timers.o: FreeRTOS\Source\timers.c
 .\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\timers.o: ..\FreeRTOS\Source\include\FreeRTOS.h
 .\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
@@ -13,4 +13,4 @@
 .\timers.o: ..\FreeRTOS\Source\include\task.h
 .\timers.o: ..\FreeRTOS\Source\include\list.h
 .\timers.o: ..\FreeRTOS\Source\include\queue.h
-.\timers.o: timers.h
+.\timers.o: .\timers.h

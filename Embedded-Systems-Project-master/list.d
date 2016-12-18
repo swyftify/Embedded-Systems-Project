@@ -1,8 +1,8 @@
 .\list.o: ..\FreeRTOS\Source\list.c
-.\list.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
+.\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\list.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\list.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
-.\list.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
+.\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\list.o: .\FreeRTOSConfig.h
 .\list.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\list.o: ..\FreeRTOS\Source\include\projdefs.h

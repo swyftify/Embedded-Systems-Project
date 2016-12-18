@@ -4,8 +4,8 @@
 .\lcd_hw.o: .\LCD\general.h
 .\lcd_hw.o: .\LCD\config.h
 .\lcd_hw.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\lcd_hw.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
-.\lcd_hw.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
+.\lcd_hw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\lcd_hw.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\lcd_hw.o: .\FreeRTOSConfig.h
 .\lcd_hw.o: ..\FreeRTOS\Source\include\projdefs.h
 .\lcd_hw.o: ..\FreeRTOS\Source\include\portable.h

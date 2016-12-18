@@ -1,8 +1,8 @@
 .\heap_3.o: ..\FreeRTOS\Source\portable\MemMang\heap_3.c
-.\heap_3.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
+.\heap_3.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\heap_3.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\heap_3.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
-.\heap_3.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
+.\heap_3.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\heap_3.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\heap_3.o: .\FreeRTOSConfig.h
 .\heap_3.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\heap_3.o: ..\FreeRTOS\Source\include\projdefs.h

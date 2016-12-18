@@ -462,7 +462,7 @@ ARM Macro Assembler    Page 8
 Command Line: --xref --diag_suppress=9931 --apcs=interwork --depend=.\serialisr
 .d -o.\serialisr.o -I..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468 -IC:\Keil_v5\
 ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --pred
-efine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 516" --list=.\seriali
+efine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 522" --list=.\seriali
 sr.lst serialISR.s
 
 
@@ -500,9 +500,9 @@ Symbol: pxCurrentTCB
       At line 58 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro
 .inc
    Uses
-      At line 114 in macro GTEXT
+      At line 114 in macro portSAVE_CONTEXT
       at line 77 in file serialISR.s
-      At line 65 in macro ˇˇåê
+      At line 65 in macro portRESTORE_CONTEXT
       at line 87 in file serialISR.s
 
 ulCriticalNesting 00000000
@@ -512,9 +512,9 @@ Symbol: ulCriticalNesting
       At line 57 in file ..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\portmacro
 .inc
    Uses
-      At line 110 in macro GTEXT
+      At line 110 in macro portSAVE_CONTEXT
       at line 77 in file serialISR.s
-      At line 69 in macro ˇˇåê
+      At line 69 in macro portRESTORE_CONTEXT
       at line 87 in file serialISR.s
 
 vUART_ISRHandler 00000000

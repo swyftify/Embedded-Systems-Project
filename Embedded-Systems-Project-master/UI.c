@@ -19,7 +19,7 @@ ButtonController initialiseButtons(){
 	Button dimmerFour = {20,255,50,0,35,275,"Hall",BLACK,LIGHT_GRAY,LIGHT_GRAY,0};
 	
 	Button presetOne = {90, 20, 65,0, 93, 50, "DIM PRESET", BLACK, CYAN,CYAN,0};
-	Button presetTwo = {160, 20, 65,0, 165, 50, "CHRISTMASS", BLACK, CYAN, CYAN, 0};
+	Button presetTwo = {160, 20, 65,0, 165, 50, "CHRISTMAS", BLACK, CYAN, CYAN, 0};
 	
 	Button adjusterDimmerOnePlus = {75,90,50,0,95,110,"+",WHITE,OLIVE,OLIVE};
 	Button adjusterDimmerOneMinus = {130,90,50,0,150,110,"-",WHITE,OLIVE,OLIVE};

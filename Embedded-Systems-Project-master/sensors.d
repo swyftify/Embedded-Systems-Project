@@ -1,7 +1,7 @@
 .\sensors.o: sensors.c
 .\sensors.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\sensors.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
-.\sensors.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
+.\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\sensors.o: .\FreeRTOSConfig.h
 .\sensors.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\sensors.o: ..\FreeRTOS\Source\include\projdefs.h
@@ -12,8 +12,8 @@
 .\sensors.o: ..\FreeRTOS\Source\include\task.h
 .\sensors.o: ..\FreeRTOS\Source\include\list.h
 .\sensors.o: ..\FreeRTOS\Source\include\queue.h
-.\sensors.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdio.h
-.\sensors.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\string.h
+.\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\sensors.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\sensors.o: sensors.h
 .\sensors.o: ..\FreeRTOS\Source\include\semphr.h
 .\sensors.o: lcd.h

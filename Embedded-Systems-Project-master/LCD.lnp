@@ -16,7 +16,7 @@
 ".\port.o"
 ".\portasm.o"
 ".\heap_3.o"
-".\timers_1.o"
+".\timers.o"
 ".\font5x7.o"
 ".\lcd_grph.o"
 ".\lcd_hw.o"

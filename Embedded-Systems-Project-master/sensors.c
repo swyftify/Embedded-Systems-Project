@@ -171,8 +171,21 @@ static portTASK_FUNCTION( vSensorsTask, pvParameters )
                 
                 if (changedState & mask)
                 {
-									printf("sensors button controller %u", buttonController.masterButton.buttonOn);
-									cmd.masterSwitch = 1;
+									if(i == 3){
+										printf("ALARM");
+										cmd.brightnessLevels[0] = 2;
+										cmd.brightnessLevels[1] = 2;
+										cmd.brightnessLevels[2] = 2;
+										cmd.brightnessLevels[3] = 2;
+										cmd.presetArray[1] = 1;
+									}if(i >= 0 && i <= 2){
+										printf("sensors button controller %u", buttonController.masterButton.buttonOn);
+										cmd.masterSwitch = 1;
+										cmd.brightnessLevels[0] = 3;
+										cmd.brightnessLevels[1] = 3;
+										cmd.brightnessLevels[2] = 3;
+										cmd.brightnessLevels[3] = 3;
+									}
 									vTaskDelayUntil( &xLastWakeTime, 5);
 									xQueueSendToBack(localQueueMain, &cmd, portMAX_DELAY);
                 }

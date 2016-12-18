@@ -1,8 +1,8 @@
 .\serial.o: serial.c
-.\serial.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdlib.h
+.\serial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\serial.o: ..\FreeRTOS\Source\include\FreeRTOS.h
-.\serial.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stddef.h
-.\serial.o: C:\Keil_v5\ARM\ARMCC_505u2\Bin\..\include\stdint.h
+.\serial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\serial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\serial.o: .\FreeRTOSConfig.h
 .\serial.o: C:\Keil_v5\ARM\Inc\Philips\lpc24xx.h
 .\serial.o: ..\FreeRTOS\Source\include\projdefs.h

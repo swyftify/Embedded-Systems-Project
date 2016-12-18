@@ -3,60 +3,87 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.16a
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: user Computer Science and S, Trinity College Dublin, LIC=----
+IDE-Version: µVision V5.22.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Pavel Tarasov, Student, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.16a
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC_505u2\Bin
-C Compiler:      Armcc.exe V5.05 update 2 (build 169)
-Assembler:       Armasm.exe V5.05 update 2 (build 169)
-Linker/Locator:  ArmLink.exe V5.05 update 2 (build 169)
-Library Manager: ArmAr.exe V5.05 update 2 (build 169)
-Hex Converter:   FromElf.exe V5.05 update 2 (build 169)
-CPU DLL:         SARM.DLL V5.16a
-Dialog DLL:      DARMP.DLL V1.51
-Target DLL:      UL2ARM.DLL V1.74.6.0
-Dialog DLL:      TARMP.DLL V1.51
+Toolchain:       MDK-Lite  Version: 5.22
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARM.DLL V5.22
+Dialog DLL:      DARMP.DLL V1.53.0.0
+Target DLL:      UL2ARM.DLL V1.74.10.0
+Dialog DLL:      TARMP.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\tarasovp\Desktop\Embedded-Systems-Project-master\Embedded-Systems-Project-master\LCD.uvproj
+C:\Users\pasho\Desktop\Embedded-Systems-Project\Embedded-Systems-Project-master\LCD.uvproj
 Project File Date:  12/12/2016
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC_505u2\Bin'
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Internal Flash'
 assembling serialISR.s...
+assembling LPC2400.s...
+assembling lcdISR.s...
+compiling serial.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+serial.c: 1 warning, 0 errors
+compiling console.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+console.c(29): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
+  	xTaskCreate( vConsoleTask, ( signed char * ) "Console", 
+onsoleSTACK_SIZE, 
+ULL, uxPriority, ( 
+TaskHandle * ) 
+ULL );
+console.c: 2 warnings, 0 errors
+compiling UI.c...
+UI.h(35): warning:  #1295-D: Deprecated declaration getButtonController - give arg types
+  ButtonController getButtonController();
+UI.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+UI.c: 2 warnings, 0 errors
+compiling ledlights.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+ledlights.c(22): warning:  #1295-D: Deprecated declaration brightness - give arg types
+  void brightness();
+ledlights.c(51): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
+  	xTaskCreate( vLightsTask, ( signed char * ) "Lights", 
+ightsSTACK_SIZE, &xCmdQ, uxPriority, ( 
+TaskHandle * ) 
+ULL );
+ledlights.c(155): warning:  #177-D: variable "buttonState"  was declared but never referenced
+  	unsigned char buttonState;
+ledlights.c(156): warning:  #550-D: variable "lastButtonState"  was set but never used
+  	unsigned char lastButtonState;
+ledlights.c(157): warning:  #177-D: variable "changedState"  was declared but never referenced
+  	unsigned char changedState;
+ledlights.c(160): warning:  #177-D: variable "brightnessValue"  was declared but never referenced
+  	unsigned int brightnessValue;
+ledlights.c: 7 warnings, 0 errors
 compiling Retarget.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 Retarget.c: 1 warning, 0 errors
-compiling main.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+compiling list.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-main.c(43): warning:  #223-D: function "vStartSensors" declared implicitly
-  	vStartSensors(1, xCmdQ);
-main.c(44): warning:  #223-D: function "vStartLights" declared implicitly
-  	vStartLights(3, xCmdQ);
-main.c: 3 warnings, 0 errors
-assembling LPC2400.s...
+..\FreeRTOS\Source\list.c: 1 warning, 0 errors
 compiling lcd.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 UI.h(35): warning:  #1295-D: Deprecated declaration getButtonController - give arg types
   ButtonController getButtonController();
 UI.h(37): warning:  #1-D: last line of file ends without a newline
   #endif
-lcd.c(27): warning:  #1295-D: Deprecated declaration drawDefaultUI - give arg types
-  void drawDefaultUI();
-lcd.c(58): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
-  	xTaskCreate( vLcdTask, ( signed char * ) "Lcd", 
-cdSTACK_SIZE, &localQueue, uxPriority, ( 
-TaskHandle * ) 
-ULL );
-lcd.c(52): warning:  #177-D: variable "xCmdQ" was declared but never referenced
-  	static xQueueHandle xCmdQ;
 lcd.c(165): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
   				strcpy(buttonController.masterButton.text, "MASTER ON");
 lcd.c(174): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
@@ -71,32 +98,11 @@ lcd.c(308): warning:  #167-D: argument of type "unsigned char *" is incompatible
   					strcpy(buttonController.adjusterReading[i].text, "");
 lcd.c(313): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
   					strcpy(buttonController.adjusterReading[i].text, "");
-lcd.c(104): warning:  #177-D: variable "cmdToInterface" was declared but never referenced
+lcd.c(104): warning:  #177-D: variable "cmdToInterface"  was declared but never referenced
   	Command cmdToInterface;
 lcd.c: 14 warnings, 0 errors
-compiling serial.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-serial.c: 1 warning, 0 errors
-compiling console.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-console.c(29): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
-  	xTaskCreate( vConsoleTask, ( signed char * ) "Console", 
-onsoleSTACK_SIZE, 
-ULL, uxPriority, ( 
-TaskHandle * ) 
-ULL );
-console.c: 2 warnings, 0 errors
-assembling lcdISR.s...
-compiling UI.c...
-UI.h(35): warning:  #1295-D: Deprecated declaration getButtonController - give arg types
-  ButtonController getButtonController();
-UI.h(37): warning:  #1-D: last line of file ends without a newline
-  #endif
-UI.c: 2 warnings, 0 errors
 compiling sensors.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 UI.h(35): warning:  #1295-D: Deprecated declaration getButtonController - give arg types
   ButtonController getButtonController();
@@ -107,67 +113,54 @@ sensors.c(61): warning:  #167-D: argument of type "signed char *" is incompatibl
 ensorsSTACK_SIZE, &localQueueMain, uxPriority, ( 
 TaskHandle * ) 
 ULL );
-sensors.c(41): warning:  #177-D: variable "xCmdQ" was declared but never referenced
+sensors.c(41): warning:  #177-D: variable "xCmdQ"  was declared but never referenced
   	static xQueueHandle xCmdQ;
-sensors.c(135): warning:  #177-D: variable "statusChange" was declared but never referenced
+sensors.c(181): warning:  #186-D: pointless comparison of unsigned integer with zero
+  									}if(i >= 0 && i <= 2){
+sensors.c(135): warning:  #177-D: variable "statusChange"  was declared but never referenced
   	unsigned int statusChange = 0;
-sensors.c(138): warning:  #177-D: variable "cmdToInterface" was declared but never referenced
+sensors.c(138): warning:  #177-D: variable "cmdToInterface"  was declared but never referenced
   	Command cmdToInterface;
-sensors.c: 7 warnings, 0 errors
-compiling ledlights.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-ledlights.c(22): warning:  #1295-D: Deprecated declaration brightness - give arg types
-  void brightness();
-ledlights.c(51): warning:  #167-D: argument of type "signed char *" is incompatible with parameter of type "const char *const"
-  	xTaskCreate( vLightsTask, ( signed char * ) "Lights", 
-ightsSTACK_SIZE, &xCmdQ, uxPriority, ( 
-TaskHandle * ) 
-ULL );
-ledlights.c(155): warning:  #177-D: variable "buttonState" was declared but never referenced
-  	unsigned char buttonState;
-ledlights.c(156): warning:  #550-D: variable "lastButtonState" was set but never used
-  	unsigned char lastButtonState;
-ledlights.c(157): warning:  #177-D: variable "changedState" was declared but never referenced
-  	unsigned char changedState;
-ledlights.c(160): warning:  #177-D: variable "brightnessValue" was declared but never referenced
-  	unsigned int brightnessValue;
-ledlights.c: 7 warnings, 0 errors
-compiling list.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-..\FreeRTOS\Source\list.c: 1 warning, 0 errors
-assembling portASM.s...
-compiling port.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\port.c: 1 warning, 0 errors
-compiling heap_3.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
-  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-..\FreeRTOS\Source\portable\MemMang\heap_3.c: 1 warning, 0 errors
-compiling font5x7.c...
+sensors.c: 8 warnings, 0 errors
 compiling queue.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 ..\FreeRTOS\Source\queue.c: 1 warning, 0 errors
+compiling main.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+main.c(43): warning:  #223-D: function "vStartSensors" declared implicitly
+  	vStartSensors(1, xCmdQ);
+main.c(44): warning:  #223-D: function "vStartLights" declared implicitly
+  	vStartLights(3, xCmdQ);
+main.c: 3 warnings, 0 errors
+assembling portASM.s...
+compiling port.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+..\FreeRTOS\Source\portable\TCD\ARM7_LPC2468\port.c: 1 warning, 0 errors
+compiling font5x7.c...
 compiling tasks.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 ..\FreeRTOS\Source\tasks.c: 1 warning, 0 errors
 compiling lcd_grph.c...
-compiling timers.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+compiling heap_3.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
-FreeRTOS\Source\timers.c: 1 warning, 0 errors
+..\FreeRTOS\Source\portable\MemMang\heap_3.c: 1 warning, 0 errors
 compiling lcd_hw.c...
-.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE" (declared at line 91)
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
   #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
 LCD\lcd_hw.c: 1 warning, 0 errors
+compiling timers.c...
+.\FreeRTOSConfig.h(106): warning:  #47-D: incompatible redefinition of macro "configMINIMAL_STACK_SIZE"  (declared at line 91)
+  #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 90 )
+FreeRTOS\Source\timers.c: 1 warning, 0 errors
 linking...
-Program Size: Code=18100 RO-data=1656 RW-data=156 ZI-data=4200412  
-".\LCD.axf" - 0 Error(s), 44 Warning(s).
-Build Time Elapsed:  00:00:01
+Program Size: Code=18156 RO-data=1656 RW-data=156 ZI-data=4200412  
+".\LCD.axf" - 0 Error(s), 42 Warning(s).
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>
